@@ -1,0 +1,56 @@
+/* Adding fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+/* font-family: 'Montserrat', sans-serif; */
+
+@font-face{
+    font-family: helvetica;
+    src: url("assets/fonts/helvetica/HelveticaNowText-Medium.woff") format(woff), url("assets/fonts/helvetica/HelveticaNowText-Light.woff") format(woff), url("assets/fonts/helvetica/HelveticaNowText-Regular.woff") format(woff);
+}
+
+/* Variables */
+:root{
+    --main-logo-color: #E94A26;
+    --main-logo-color2: rgba(233,74,38);
+    --main-info_text-color: #333333;
+    --main-second-color: #FF671C;
+    --main-gradient-color: linear-gradient(to right, var(--main-logo-color), var(--main-second-color), #F51B6C );
+}
+
+/* Universal selector */
+*{
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+img{
+    width:100%;
+}
+
+/* Fonts */
+a ,button{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btn_menu{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+}
+
+h1 ,p{
+    font-family: helvetica;
+}
+
+.btn{
+    text-transform: uppercase;
+    outline: none;
+    border: none;
+    background: none;
+}
+
+
+
+

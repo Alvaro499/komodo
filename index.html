@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" type="text/css" href="css/bridge.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" href="assets/fonts_awesome/css/all.min.css">
+    
+</head>
+<body>
+    <div class="container">
+      <header class="header_top_nav">
+
+            <div class="logo">
+                <img src="assets/logo/logo.svg" alt="Logo de la pagina" class="loco">
+            </div>
+
+            <nav class="top_nav">
+                <button class="btn btn_menu"><i class="fas fa-bars"></i>Menú</button>
+
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="catalogo.html">Catálogo</a></li>
+                    <li><a href="pedidos.html">Pedidos</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+      </header>
+
+        <section class="banner">
+            <!-- <img src="assets/SVG/banner_index2.svg" alt="" class="banner_svg2"> -->
+            <!-- <img src="assets/SVG/new_banner2.svg" alt="" class="banner_svg2"> -->
+            <svg id="banner_svg1" class="banner_svg1" preserveAspectRatio="none" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 325 195"><defs><style>.cls-1{fill:url(#Degradado_sin_nombre_49);}</style><linearGradient id="Degradado_sin_nombre_49" y1="102.5" x2="325" y2="102.5" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#f5821b"/><stop offset="1" stop-color="#f51b6c"/></linearGradient></defs><title>new_banner2</title>
+                <path id="banner1" class="cls-1" d="M0,5V200H325V14c-73.88,7.4-107.15,12.47-122,16-.84.2-6.82,1.63-15,3.42-14.27,3.12-26.07,5.7-40,7.58a307,307,0,0,1-31.08,2.58A272.55,272.55,0,0,1,66,34,273.51,273.51,0,0,1,0,5Z" transform="translate(0 -5)"/>
+
+                <path id="banner2" class="cls-1" d="M325,5V200H0V14c73.88,7.4,107.15,12.47,122,16,.84.2,6.82,1.63,15,3.42,14.27,3.12,26.07,5.7,40,7.58a307,307,0,0,0,31.08,2.58A272.55,272.55,0,0,0,259,34,273.51,273.51,0,0,0,325,5Z" transform="translate(0 -5)"/>
+            </svg>
+            <!-- <svg id="banner2" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 325 195"><defs><style>.cls-1{fill:url(#Degradado_sin_nombre_49);}</style><linearGradient id="Degradado_sin_nombre_49" y1="102.5" x2="325" y2="102.5" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#f5821b"/><stop offset="1" stop-color="#f51b6c"/></linearGradient></defs><title>new_banner1</title><path id="new_banner1" class="cls-1" d="M325,5V200H0V14c73.88,7.4,107.15,12.47,122,16,.84.2,6.82,1.63,15,3.42,14.27,3.12,26.07,5.7,40,7.58a307,307,0,0,0,31.08,2.58A272.55,272.55,0,0,0,259,34,273.51,273.51,0,0,0,325,5Z" transform="translate(0 -5)"/>
+            </svg> -->
+            <article>
+                <div>
+                    <h1>"Lleva el estilo a todos lados"</h1>
+                    <p>En Komodo te ofrecemos una gran variedad de pulseras artesanalaes, las cuales vienen en multiples estilos a escoger y con la mejor calidad.</p>
+                </div>
+                <img src="assets/img/model_banner.png" alt="Imagen ilustrativa del producto" class="model_banner">
+            </article>  
+        </section>
+    </div>
+
+    <script type="text/javascript" src="js/responsive_menu.js"></script>
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.1/hsap.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <script type="text/javascript" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/MorphSVGPlugin3.min.js">
+
+        var tl = gsap.timeline({repeat: -1, yoyo: true});
+        tl.to("#banner1", {duration: 7, morphSVG: "#banner2", ease: "power1.InOut"});
+
+    </script>
+    <script type="text/javascript" src="">
+
+       
+
+    </script>
+    
+</body>
+</html
