@@ -26,7 +26,7 @@
     font-size: 1rem;
     color: #000;
     position: relative;
-    z-index: 10000;
+    z-index: 200;
 }
 
 .btn_menu_on{
@@ -44,10 +44,10 @@ ul{
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
-    /* clip-path: circle(0% at 80% 5%); */
+    -webkit-clip-path: circle(0% at top right);
     clip-path: circle(0% at top right);
     transition: clip-path .8s;
-    z-index: 1;
+    z-index: 100;
 }
 
 .ul_menu_on{
@@ -61,7 +61,7 @@ ul li{
 }
 
 ul li a{
-    color: blanchedalmond;
+    color: #ffffff;
     font-size: 1.4rem;
     font-weight: bolder;
     letter-spacing: 3px;
@@ -80,7 +80,6 @@ ul li:hover{
 .btn_menu:hover{
     background: #33333375;
     cursor: pointer;
-
 }
 
 
@@ -146,16 +145,6 @@ ul li:hover{
     align-self: flex-end;
 }
 
-/* @media screen and (min-width: 768px){
-    .banner{
-        
-        height: 400px;
-        
-    }
-} */
-
-
-
 
 /* SLIDER */
 
@@ -172,21 +161,6 @@ ul li:hover{
     
 }
 
-/* .slider_cont:before{
-    content: "";
-    
-    background-image: radial-gradient(circle, white, black);
-    width: calc(100% - 25%);
-    height: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    
-    border-radius: 50%;
-    opacity: 0.5;
-} */
-
 .slider{
     width: 199.8%;
     height: 250px;
@@ -194,7 +168,6 @@ ul li:hover{
     align-items: center;
     position: relative;
     margin-left: -33.3%;
-   
 }
 
 .slider_img{
@@ -305,16 +278,16 @@ ul li:hover{
 
 
 
-/* BOTONES DE PEDIDO */
+/* BOTONES DE PEDIDO Y CATALOGO */
 
 .btn_info_product{
-    margin-top: 25px;
+    margin-top: 30px;
     width: 100%;
     height: auto;
-   
     display: flex;
     justify-content: center;
 }
+
 .btn_info{
     width: auto;
     height: auto;
@@ -329,45 +302,74 @@ ul li:hover{
     background: #ffffff;
     color: var(--main-second-color);
     font-weight: 700;
-    border: 2px solid var(--main-second-color)
+    border: 2px solid var(--main-second-color);
+    position: relative;
+    overflow: hidden;
 }
 
-/* .catalogue:before{
-    content: "";
+.catalogue:before{
+    content: "Ver Catálogo";
     background: var( --main-second-color);
     width: 100%;
     height: 100%;
     position: absolute;
     left: 0;
+    top: 0;
     margin-left: -100%;
-} */
-
-/* .catalogue:hover .catalogue:hover{
-
-} */
-
-.order{
-
-    background: var(--main-second-color);
-    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: margin 0.5s;
 }
 
-/* .order:before{
-    content: "";
-    background: #fff;
-    width: 100%;
-    height: 100%;
+.catalogue:hover:before{
+    margin-left: 0;
+
+}
+
+.catalogue:hover{
+    color: #ffffff;
+
+}
+
+.order{
+    background: var(--main-second-color);
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+.order:before{
+    content: "Realizar Pedido";
+    background: #ffffff;
+    color: var(--main-second-color);
+    font-weight: 700;
+    width: 98.5%;
+    height: 92.5%;
+    border: 2px solid var(--main-second-color);
+    border-radius: 0.5rem;
     position: absolute;
-    left: 0;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-right: -100%;
-} */
+    transition: margin 0.5s;
+    
+}
+
+.order:hover:before{
+    margin-right: 0;
+}
+
+.order:hover{
+    color: var(--main-second-color);
+}
 
 @media (min-width: 768px){
     .btn_info{
-       
         font-size: 1.5rem;
-       
-       
     }
 }
 
