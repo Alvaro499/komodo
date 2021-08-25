@@ -53,6 +53,7 @@ h1, h2, h3, p{
     text-transform: uppercase;
     outline: none;
     border: none;
+    cursor: pointer;
 }
 
 

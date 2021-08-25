@@ -79,7 +79,6 @@ ul li:hover{
  
 .btn_menu:hover{
     background: #33333375;
-    cursor: pointer;
 }
 
     /* INDEX HEADER media-queries */
@@ -128,7 +127,7 @@ ul li:hover{
     width: 100%;
     height: 300px;
     position: relative;
-    background: url("../assets/img/model_banner.png") no-repeat;
+    background: url("../assets/img/banner_model.png") no-repeat;
     background-position: bottom right;
     background-size: 50%;
     display: flex;
@@ -288,11 +287,9 @@ ul li:hover{
     bottom: 0;
     outline: none;
     border: none;
-    
     font-size: 1.5rem;
     padding: 0.5em 1em;
     margin-bottom: 0.5em;
-    cursor: pointer;
     background: #00000090;
     color: #fff;
     z-index: 50;
@@ -388,7 +385,6 @@ ul li:hover{
     padding: 0.5em;
     margin: 0.5em 1em;
     border-radius: 0.5rem;
-    cursor: pointer;
 }
 
 .catalogue{
@@ -638,8 +634,70 @@ img.icon_cards{
     }
 
 
+
+
 /* Quality BANNER*/
 
+    .banner_2{
+        margin-top: calc(25%);
+    }
+    .banner_2_content{
+        width: 100%;
+        /* height: 300px; */
+        height: auto;
+        background: url("../assets/img/banner2_model.png") no-repeat,#000000;
+        background-position: left center, center;
+        background-size: 60% 100%, 100%;
+        color: #ffffff;
+        padding: 1rem 2rem;
+        position: relative;
+        display: flex;
+        flex-flow: column nowrap;
+    }
+
+    .banner_2 h2{
+        font-size: 1.2rem;
+        align-self: center;
+        margin-bottom: 25px;
+    }
+    
+    .banner_2 p{
+        width: 200px;
+        height: auto;
+        font-size: 0.8rem;
+        margin-bottom: 25px;
+        align-self: flex-end;
+        position: relative;
+        left: calc(-3%);
+        text-align: center;
+    }
+
+    .btn_banner_2{
+        width: auto;
+        height: auto;
+        background: var(--main-second-color);;
+        color: #ffffff;
+        font-size: 0.8rem;
+        padding: 0.5em;
+        margin-bottom: 15px;
+        border-radius: 0.5rem;
+        align-self: flex-end;
+        transition: transform 0.5s;
+    }
+
+    .btn_banner_2:hover{
+        transform: translateY(-10%);
+    }
+
+    .btn_banner_2:active{
+        transform: scale(0.9);
+    }
 
 
     /* Quality BANNER media-queries*/
+    @media (min-width: 550px){
+        .banner_2 p{
+            
+            left: calc(-15%);
+        }
+    }
