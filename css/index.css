@@ -696,8 +696,73 @@ img.icon_cards{
 
     /* Quality BANNER media-queries*/
     @media (min-width: 550px){
+
+        .banner_2_content{
+            height: 300px;
+            justify-content: space-around;
+        }
+
         .banner_2 p{
             
-            left: calc(-15%);
+            left: calc(-10%);
+            font-size: 1rem;
+            width: 300px;
+        }
+
+        .btn_banner_2{
+            font-size: 1rem;
+        }
+    }
+
+    @media (min-width: 768px){
+
+        .banner_2_content{
+            height: 400px;
+            /* justify-content: space-around; */
+            background-size: 50% 100%, 100%;
+        }
+
+        .banner_2 h2{
+            font-size: 2rem;
+        }
+
+        .banner_2 p{
+            
+            left: calc(-10%);
+            font-size: 1.4rem;
+            width: 400px;
+        }
+
+        .btn_banner_2{
+            font-size: 1.2rem;
+        }
+    }
+
+    @media (min-width: 1200px){
+
+        .banner_2{
+            margin-left: 100px;
+            margin-right: 100px;
+        }
+    }
+
+    @media (min-width: 1400px){
+
+        .banner_2 h2{
+            font-size: 2.5rem;
+        }
+
+        .banner_2_content{
+            height: 500px;
+            background-size: 40% 100%, 100%;
+        }
+
+        .banner_2 p{
+            font-size: 1.6rem;
+            width: 500px;
+        }
+
+        .btn_banner_2{
+            font-size: 1.5rem;
         }
     }
