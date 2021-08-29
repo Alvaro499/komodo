@@ -201,16 +201,23 @@
             <!-- CREDITOS DE LOS ICONOS -->
 
             <section class="credits">
-                <h4>Agradecimientos y respectivos créditos</h3>
-
-                <div class="credits_info">
+                <div class="accordion">
+                    <h4 role="button">Agradecimientos y créditos:</h3>
+                    <i class="fas fa-arrow-down"></i>
+                </div>
+                
+                <div id="credits_info" class="credits_info">
 
                     <p>Se agradace a la pagina flaticon y sus disenadores la oportunidad de usar sus iconos en nuestro sitio web. A continuacion brindamos los respectivos creditos:</p>
 
-                    <span class="author_icon"><div>Icons made by <a href="https://www.flaticon.com/authors/geotatah" title="geotatah">geotatah</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div></span>
-                    <span class="author_icon"><div>Icons made by <a href="https://www.flaticon.com/authors/nhor-phai" title="Nhor Phai">Nhor Phai</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div></span>
-                    <span class="author_icon"><div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div></span>
-                    <span class="author_icon"><div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div></span>
+                    <div class="div_author">
+
+                        <div>Icons made by <a href="https://www.flaticon.com/authors/geotatah" title="geotatah">geotatah</a> from: <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+                        <div>Icons made by <a href="https://www.flaticon.com/authors/nhor-phai" title="Nhor Phai">Nhor Phai</a> from: <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+                        <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from: <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+                        <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from: <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+
+                    </div>
 
                 </div>
             </section>
@@ -221,6 +228,23 @@
 
     <script type="text/javascript" src="js/responsive_menu.js"></script>
     <script type="text/javascript" src="js/index_slider.js"></script>
+    <script type="text/javascript">
+
+        let accordion = document.querySelector(".accordion");
+        let credits_row = document.querySelector(".fa-arrow-down");
+        let credits = document.querySelector(".credits_info");
+
+        accordion.addEventListener("click", function(event){
+            
+            if(credits.classList.toggle("credits_info_on")){
+
+                credits_row.style.transform = "rotate(180deg)";
+            }else{
+                credits_row.style.transform = "rotate(0)";
+            }
+            
+        });
+    </script>
     
 </body>
 </html
