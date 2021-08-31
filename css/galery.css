@@ -120,6 +120,13 @@
 
     }
 
+    @media (min-width:1200px){
+        .box_logo{
+            width: 250px;
+            height: 150px;
+        }
+    }
+
 
 
 
@@ -163,6 +170,12 @@
 
 .fa-search{
     color: #000000;
+    cursor: pointer;
+}
+
+#search_for{
+    height: 1px;
+    visibility: hidden;
 }
 
     /*BANNER AND SEARCH SECTION Media-queries */
@@ -246,6 +259,7 @@
 }
 
 .btn_filter{
+
     background: #4E4F4F;
     color: #ffffff;
     font-size: 0.8rem;

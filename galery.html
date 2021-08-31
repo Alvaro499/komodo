@@ -39,13 +39,16 @@
 
             <section class="banner">
                 <h1>¡Explora nuestro catálogo!</h1>
-                <div class="searcher">
+                <form class="searcher">
                     <label for="search" hidden>Busca algo más especifico en la galería...</label>
                     <input type="search" class="search" placeholder="Busca algo más especifico...">
-                    <i class="fas fa-search"></i>
+                    
+                    <label for="search_for" title="Iniciar búsqueda"><i class="fas fa-search"></i></label>
+                    
+                    <input type="submit" id="search_for" aria-hidden="true" hidden>
                 </div>
                 
-            </section>
+            </form>
         </header>
 
         <!-- KEYWORDS -->
