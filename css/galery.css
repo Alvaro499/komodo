@@ -400,34 +400,29 @@
     background: #00000098;
     width: 100%;
     height: 100%;
-    padding: 1rem;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 201;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .modal{
-    width: 100vw;
+    width: 85vw;
     height: 95vh;
     background: #ffffff;
     overflow: scroll;
-    display: flex;
-    flex-flow: column nowrap;
-    /* display: grid;
+    display: grid;
     grid-template-columns: repeat(1, auto);
-    grid-template-rows: repeat(3, auto);
-    grid-template-areas: 
-    "top_options"
-    "img_cont"
-    "modal_info"; */
+    grid-template-rows: repeat(1, auto);
+    justify-items: center;
+    /*align-items: center; */
 }
 
 .top_options{
-    /* grid-area: top_options; */
-    width: auto;
+    width: 100%;
     height: auto;
     padding: 0.6rem;
     background: #ffffff;
@@ -465,11 +460,9 @@
 }
 
 .img_container{
-    /* grid-area: img_cont; */
-    margin-top: 25px;
-    width: 100%;
-    height: 50%;
-    padding: 0 1rem;
+    width: 90%;
+    height: 75%;
+    justify-self: center;
     align-self: center;
 }
 
@@ -480,15 +473,23 @@
 }
 
 .modal_info{
-    /* grid-area: modal_info; */
-    margin-top: 25px;
-    width: 100%;
-    padding: 0 1rem;
+    width: 90%;
     display: flex;
     flex-flow: column nowrap;
+    align-self: center;
 }
 
-.modal_info > *:not(button){
+.modal_info li{
+    font-family: helvetica;
+    font-size: 1.4rem;
+    margin-top: 10px;
+}
+
+.modal_info strong{
+    margin-right: 10px;
+}
+
+.modal_info > *:not(:first-child){
     margin-top: 10px;
 }
 
@@ -524,71 +525,87 @@
 }
 
     /* MODAL Media-queries */
-    @media (min-width: 550px){        
-
-        .modal{
-            width: 85vw;
-        }
-
-        .modal_info{
-            padding: 0 2rem;
-        }
-
-        .img_container{
-            padding: 0 2rem;
-            width: 75%;
-            height: 50%;
-        }
-    }
-
-    @media (min-width: 768px){        
-
+    @media (min-width: 550px){
+        
         .modal{
             width: 75vw;
-        }
-
-        .img_container{
-            width: 75%;
-            height: 60%;
-        }
-
-        .modal_info{
-            padding: 0 4rem;
-        }
-
-        .btn_modal > button{
-            font-size: 1.2rem;
+            height: 95vh;
         }
     }
 
-    @media (min-width: 1200px){        
+    @media (min-width: 768px){
 
+        .img_container{
+            width: 75%;
+            height: 75%;
+        }
+
+        .modal_info{
+            width: 75%;
+            align-items: center;
+        }
+
+        .modal_info > *:not(:first-child){
+            margin-top: 20px;
+        }
+        
+    }
+
+    @media (min-width: 1200px){
+        
         .modal{
-            width: 85vw;
-            /* grid-template-columns: auto auto;
-            grid-template-areas: 
-            "top_options" "modal_info"
-            "top_options" "modal_info" 
-            "img_cont" "img_cont"; */
+            grid-template-columns: repeat(2, 50%);
+            grid-template-rows: repeat(4, auto);
+            overflow: auto;
         }
 
         .top_options{
-            padding: 1rem;
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row-start: 1;
+            grid-row-end: 2;
+            padding: 0 1rem;
         }
 
-        .top_options > button{
-            font-size: 1.6rem;
+        .img_container{
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 2;
+            grid-row-end: 5;
+            width: 95%;
+            height: 85%;
+        }
+
+        .modal_info{
+            width: 100%;
+            height: auto;
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-row-start: 2;
+            grid-row-end: 5;
+        }
+
+        /* .modal_info > *:not(:first-child){
+            margin-top: 40px;
+        } */
+
+        .modal_info li{
+            font-size: 1.4rem;
+            margin-top: 20px;
         }
 
         .fa-question, .fa-times{
-            font-size: 1.6rem;
-        }
-
-        .modal_info > *:not(button){
-            margin-top: 25px;
-        }
-
-        .modal_info > h3, h4, p{
             font-size: 1.4rem;
         }
+
+        .top_options > button{
+            font-size: 1.2rem;
+        }
+
+        .btn_modal > button{
+            margin: 10px 10px 0 10px;
+            font-size: 1.4rem;
+            padding: 0.8em;
+        }
+
     }
