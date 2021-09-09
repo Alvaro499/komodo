@@ -24,15 +24,15 @@
                     <button class="close btn"><i class="fas fa-times"></i></button>
                 </div>
                 <div class="img_container">
-                    <img src="" alt="Pulsera seleccionada" class="img_modal">
+                    <img id="my_image" class="img_modal" alt="Pulsera seleccionada">
                 </div>
                 <div class="modal_info">
                     <ul>
-                        <li class="bracelet_name"><strong>Nombre:</strong> Agatha</li>
-                        <li class="bracelet_price"><strong>Precio:</strong> $22</li>
+                        <li class="bracelet_name"><strong>Nombre:</strong> <span>Agatha</span></li>
+                        <li class="bracelet_price"><strong>Precio:</strong> <span>$22</span></li>
                     </ul>
                     <div class="btn_modal">
-                        <button class="btn download_img"><a download>Descargar imagen</a></button>
+                        <button class="btn download_img"><a>Descargar Imagen</a></button>
                         <button class="btn order">Agregar a pedido</button>
                     </div>
                 </div>
@@ -53,9 +53,9 @@
     
                     <ul class="menu">
                         <li><a href="index.html">Inicio</a></li>
-                        <li><a href="catalogo.html">Catálogo</a></li>
+                        <li><a href="galery.html">Catálogo</a></li>
                         <li><a href="pedidos.html">Pedidos</a></li>
-                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="contact.html">Contacto</a></li>
                     </ul>
                 </nav>
 
@@ -113,11 +113,13 @@
                     <div class="photos" title="Click para más información">
                         <img src="assets/img/galery/pulsera2.jpeg" alt="">
                         <p class="info">Pulsera 2</p>
+                        <p class="price">5000,00</p>
                     </div>
 
                     <div class="photos" title="Click para más información">
                         <img src="assets/img/galery/pulsera3.jpeg" alt="">
                         <p class="info">Pulsera 3</p>
+                        <p class="price">3500,00</p>
                     </div>
 
                     <div class="photos" title="Click para más información">
@@ -226,6 +228,12 @@
 
     </div>
 
+    <!-- <canvas id="myCanva" class="myCanva" aria-hidden="true">
+    </canvas>
+
+    <button class="btn_canva">Descargar</button> -->
+
+
     <!-- FORMULARIO OCULTO -->
 <!-- 
     Como se solicitó anteriormente, así es como puede agregar dinámicamente un formulario oculto y enviarlo cuando desee actualizar la página.
@@ -268,6 +276,8 @@ Esto es equivalente a enviar este formulario HTML:
      
     <script type="text/javascript" src="js/responsive_menu.js"></script>
     <script type="text/javascript" src="js/galery.js"></script>
+
+    <!-- SCROLL SIMPLE DE LOS FILTROS -->
     <script type="text/javascript">
 
         let left = document.querySelector(".left");
@@ -285,6 +295,65 @@ Esto es equivalente a enviar este formulario HTML:
         left.addEventListener("click", moveLeft)
         right.addEventListener("click", moveRight)
     
+    </script>
+
+    <!-- DESCARGA DE LA IMAGEN SELECCIONADA DESDE LA GALERIA -->
+    <script type="text/javascript">
+
+        // window.addEventListener("load", function(e){
+
+        //     let my_image = document.querySelector("#my_image");
+        //     let pulsera1 = document.querySelector("#pulsera1");
+        //     let canvas = document.querySelector("#myCanva");
+        //     let btn_canva = document.querySelector(".btn_canva");
+        //     let link_to_download = document.querySelector(".download_img > a");
+        //     let btn_download = document.querySelector(".download_img")
+
+        //     function toCanvas(image){
+
+        //         image.crossOrigin = "anonymous"
+        //         let double_width = image.width * 2;
+        //         let double_height = image.height * 2;
+        //         canvas.width = double_width;
+        //         canvas.height = double_height;
+        //         canvas.getContext("2d").drawImage(image,0,0, double_width, double_height);
+
+        //         btn_canva.addEventListener("click", function(e){
+
+        //             //Soporte pata IE y EDGE (es un metodo obsoleto)
+        //             if(window.navigator.msSaveBlob){
+
+        //                 window.navigator.msSaveBlob(canvas.msToBlob(), "pulsera_img.png")
+
+        //             }else{
+                        
+        //                 let a = document.createElement("a");
+        //                 btn_canva.appendChild(a)
+        //                 a.href = canvas.toDataURL();
+        //                 a.download = "pulsera_img.jpg";
+
+
+        //                 setTimeout(() => {
+        //                     //Evitar que el stack se llene de funciones
+        //                     a.click();
+                            
+        //                 }, 1000);
+                        
+        //                 btn_canva.removeChild(a);
+                        
+        //             }
+        //         })
+                
+
+        //     }
+            
+        //     toCanvas(pulsera1)
+        //     // document.createElement("div").appendChild(toCanvas(pulsera1));
+        //     // https://www.it-swarm-es.com/es/javascript/descargar-elemento-canvas-una-imagen/941257743/
+        //     //https://stackoverflow-com.translate.goog/questions/22710627/tainted-canvases-may-not-be-exported?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=ajax,sc,elem
+        //     //https://garyrafferty.com/software/Tainted-Canvas/
+        //     //https://tonalidad.es/blog/convertir-imagen-base64/
+        // })
     </script>
     
 </body>
