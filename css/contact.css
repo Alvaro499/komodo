@@ -1,0 +1,444 @@
+/* HEADER */
+/* body{
+    overflow: hidden;
+} */
+
+.header_top_nav{
+    width: 100%;
+    height: auto;
+    background: url("../assets/svg/banner2.svg") no-repeat;
+    padding: 0 0 2rem 0;
+    position: relative;
+}
+
+.box_logo{
+    width: 175px;
+    height: 100px;
+    background: url("../assets/svg/banner_logo.svg") no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo{
+    width: 75px;
+    height: 75px;
+    position: relative;
+    left: -4%;
+}
+
+.menu_logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.btn_menu{
+    background: none;
+    padding: 5px;
+    margin: 15px 35px 0 0 ;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    font-size: 1rem;
+    color: #ffffff;
+    position: relative;
+    z-index: 200;
+}
+
+.fa-bars{
+    font-size: 40px;
+}
+
+.btn_menu_on{
+    color: #fff;
+}
+
+.menu{
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    -webkit-clip-path: circle(0% at top right);
+    clip-path: circle(0% at top right);
+    transition: clip-path .8s;
+    z-index: 100;
+}
+
+.ul_menu_on{
+    -webkit-clip-path: circle(100%);
+    clip-path: cirlce(100%);
+}
+
+.menu > li{
+    margin: 20px 0;
+    transition: margin 0.5s;
+}
+
+.menu > li > a{
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: bolder;
+    letter-spacing: 3px;
+    transition: color 0.5s;
+}
+
+/* INDEX HEADER HOVER'S */
+
+ .menu li a:hover{
+    color: var(--main-logo-color);
+ }
+
+.menu li:hover{
+    margin-left: 25px;
+}
+ 
+.btn_menu:hover{
+    background: #33333375;
+}
+
+    /* HEADER LOGO-MENU Media-queries */
+
+    @media (min-width:768px){
+
+        .box_logo{
+            width: 200px;
+            height: 125px;
+        }
+        .logo{
+            width: 100px;
+            height: 100px;
+        }
+        
+        .fa-bars{
+            font-size: 50px;
+        }
+
+    }
+
+    @media (min-width:1200px){
+        .box_logo{
+            width: 250px;
+            height: 150px;
+        }
+    }
+
+
+
+
+/* BANNER AND SEARCH SECTION */
+
+.banner{
+    margin: 3rem auto;
+    width: 85%;
+}
+
+.banner h1{
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.banner p{
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+    /*BANNER AND SEARCH SECTION Media-queries */
+        
+    @media (min-width: 768px){
+        .banner{
+            
+            margin: 4rem auto;
+            width: 75%;
+        }
+        
+        .banner h1{
+            font-size: 2rem;
+        }
+        
+        .banner p{
+            font-size: 1.2rem;
+            text-align: justify
+        }
+    }
+
+    @media (min-width: 1200px){
+
+        .banner h1{
+            font-size: 2.5rem;
+        }
+        
+        .banner p{
+            font-size: 1.6rem;
+            text-align: center;
+            
+        }
+
+        
+    }
+
+
+
+/* FORM */
+
+.form_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.form_container:after{
+    content: "";
+    width: 100%;
+    height: 25px;
+    background: url("../assets/svg/footer.svg") no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.form_social_contact{
+    width: 90%;
+    background: #fff;
+    padding: 40px 20px;
+    margin: auto;
+    box-shadow: 2px 2px 8px #000, -2px -2px 8px #000;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    top: -15px;
+    z-index: 1;
+}
+
+form{
+    display: flex;
+    flex-flow: column wrap;
+}
+
+form h3{
+    margin-bottom: 40px;
+}
+
+form label{
+    margin-bottom: 3px;
+}
+
+form input:not([type = "submit"]){
+    margin-bottom: 40px;
+    width: 100%;
+    height: 2rem;
+    padding: 0.5rem;
+    border: none;
+    background: var(--main-input-color);
+}
+
+form textarea{
+    margin-bottom: 40px;
+    width: 100%;
+    background: var(--main-input-color);
+    padding: 1rem;
+    border: none;
+    resize: none;
+}
+
+form input[type="submit"]{
+    width: 50%;
+    font-size: 1.4rem;
+    padding: 0.5em;
+    background: #fff;
+    border: 2px solid var( --main-second-color);
+    color: var(--main-second-color);
+    font-weight: 700;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+hr{
+    width: 90%;
+    border: 0.5px solid #000;
+    text-align: center;
+    color: #000;
+    margin: 2rem 0;
+}
+
+/* SOCIAL CONTACT */
+
+.social_contact{
+    margin-top: 25%;
+}
+
+.social_contact > span{
+    color: #000;
+}
+
+.contact{
+    margin-bottom: 2rem;
+}
+
+.contact > ul{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+.contact a{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.contact li i{
+    font-size: 2rem;
+    margin: 1rem 0.5rem;
+    transition: all 1s;
+}
+    .fa-facebook-square{
+        color: #036CE4;
+    }
+
+    .fa-envelope-square{
+        color: #212529;
+    }
+
+    .fa-whatsapp{
+        color: #1BD06A;
+    }
+
+    .fa-instagram{
+        color: #8a3ab9;
+    }
+
+.contact li span{
+    color: #000;
+    font-weight: 700;
+}
+
+.contact li:hover i{
+    transform: rotate(90deg);
+}
+
+    /* FORM_SOCIAL_CONTACT - Media-queries*/
+    @media (min-width: 550px){
+
+        .form_social_contact{
+            width: 85%;
+            padding: 40px 40px;
+        }
+
+        form input[type="submit"]{
+            width: 40%;
+        }
+    }
+
+    @media (min-width: 768px){
+
+        .form_social_contact{
+            width: 90%;
+            padding: 60px 20px;
+            flex-flow: row-reverse nowrap;
+        }
+
+        form{
+            width: 50%;
+        }
+
+        form h3{
+            font-size: 1.4rem;
+        }
+        
+        form label{
+            font-size: 1.4rem;
+            
+        }
+
+        form input:not([type = "submit"]){
+            height: 2.5rem;
+            font-size: 1.4rem;
+        }
+
+        form textarea{
+            font-size: 1.2rem;
+        }
+
+        .contact{
+            margin-bottom: 3rem;
+        }
+   
+        .social_contact{
+            margin-top: 0;
+            width: 50%;
+            align-self: center;
+        }
+
+        .contact li i{
+            font-size: 2.5rem;
+        }
+
+        .contact h4{
+            font-size: 1.2rem;
+        }
+
+    }
+
+    @media (min-width: 1200px){
+
+        .form_social_contact{
+            margin: 0 100px;
+            padding: 60px 40px;
+        }
+
+        form input:not([type = "submit"]){
+            height: 3rem;
+        }
+    }
+
+
+/* FOOTER */
+
+footer{
+    width: 100%;
+    background: url("../assets/svg/footer.svg") no-repeat;
+    color: #ffffff;
+    padding: 2rem;
+    position: relative
+}
+
+footer:after{
+    content: "";
+    width: 100%;
+    height: 75px;
+    background: url("../assets/svg/footer.svg") no-repeat;
+    position: absolute;
+    top: -50px;
+    left: 0;
+    z-index: 0;
+}
+
+footer p{
+    text-align: center;
+    color: #fff;
+    position: relative;
+}
+
+    /* FOOTER Media-queries */
+
+    @media (min-width: 1200px){
+
+        footer p{
+            font-size: 1.2rem;
+        }
+
+    }

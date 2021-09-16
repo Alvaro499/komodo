@@ -13,6 +13,7 @@
     --main-logo-color: #E94A26;
     --main-logo-color2: rgba(233,74,38);
     --main-info_text-color: #333333;
+    --main-input-color: #D7D7D7;
     --main-second-color: #FF671C;
     --main-gradient-color: linear-gradient(to right, var(--main-logo-color), var(--main-second-color), #F51B6C );
 
@@ -45,7 +46,7 @@ a ,button{
     font-weight: bolder;
 }
 
-h1, h2, h3, h4, p, strong{
+h1, h2, h3, h4, p, strong, label{
     font-family: helvetica;
 }
 
