@@ -37,7 +37,7 @@ img{
 }
 
 /* Fonts */
-a ,button{
+a ,button, span{
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -46,11 +46,12 @@ a ,button{
     font-weight: bolder;
 }
 
-h1, h2, h3, h4, p, strong, label{
+h1, h2, h3, h4, p, strong, label,span{
     font-family: helvetica;
 }
 
 .btn{
+    background: none;
     text-transform: uppercase;
     outline: none;
     border: none;

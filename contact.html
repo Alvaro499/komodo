@@ -5,12 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Contacto</title>
-    <link  rel="stylesheet" type="text/css" href="css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="css/contact.css">
     <link rel="stylesheet" href="assets/fonts_awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/contact.css">
+    <link rel="stylesheet" type="text/css" href="css/shared_styles/alerts.css">
 </head>
 <body>
+
     <div class="container">
+
+        <div class="container_alert">
+            <div class="alert alert_error">
+                <div class="title_icon">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <span class="title_alert"></span>
+                </div>
+                <span class="alert_info"></span>
+                <button class="close btn"><i class="fas fa-times"></i></button>
+            </div>
+
+            <div class="alert alert_success">
+                <div class="title_icon">
+                    <i class="fas fa-check"></i>
+                    <span class="title_alert"></span>
+                </div>
+                <span class="alert_info"></span>
+                <button class="close btn"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
 
         <header class="header_top_nav">
 
@@ -49,21 +71,31 @@
                 <form id="contact_form" >
 
                     <h3>Realiza cualquier consulta</h3>
-        
+                    
                     <label for="user_name">Nombre:</label>
                     <input type="text" id="user_name" name="user_name">
+                    <div class="input_error name_error">*Escriba su nombre</div>
         
                     <label for="last_name">Apellidos:</label>
                     <input type="text" id="last_name" name="last_name">
+                    <div class="input_error last_error">*Escriba ambos apellidos</div>
         
                     <label for="cel">Celular:</label>
                     <input type="tel" id="cel" name="cel">
+                    <div class="input_error cel_error">*Indique su número de celular</div>
 
                     <label for="email">Correo electrónico:</label>
                     <input type="email" id="email" name="email">
+                    <div class="input_error email_error">*Escriba su correo electrónico</div>
+
+                    <label for="image">Selecciona al menos una imagen:</label>
+                    <input type="file" id="image" name="image[]" multiple="true">
+                    <div class="input_error img_error">*Solo se permiten enviar 4 imágenes como máximo, estas deben ser en formato PNG o JPG y menores a 15MB</div>
+
         
                     <label for="comment">Comentario:</label>
                     <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+                    <div class="input_error comment_error">*Escriba su consulta</div>
     
                     <input type="submit" value="Enviar">
         
@@ -123,24 +155,8 @@
 
     </div>
     <script type="text/javascript" src="js/responsive_menu.js"></script>
-    <script type="text/javascript">
-
-        let data = new FormData(document.getElementById("contact_form"));
-        fetch("business/mails/contact_email.php", {method: "POST", body: data, }).
-        then(function(res){
-            console.log(res)
-            if(response.ok) {
-                return response.text()
-            }else{
-                throw "Error en la llamada Ajax";
-            }
-        }).
-        catch(function(error){
-            console.log(error)
-        })
-
-        
-    </script>
-
+    <script type="module" src="js/alerts.js"></script>
+    <script type="text/javascript" src="js/contact_email.js"></script>
+    <script type="module" src="js/consult.js" ></script>
 </body>
 </html>
