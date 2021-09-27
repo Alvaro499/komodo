@@ -1,7 +1,7 @@
 <?php
-    require("email.php");
+    require("../model/email.php");
 
-    $send_email = new B_ContactEmail();
+    $send_email = new ContactEmail_model();
 
     $name = $_POST["user_name"];
     $last_name = $_POST["last_name"];

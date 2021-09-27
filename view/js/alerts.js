@@ -74,14 +74,8 @@ class Alerts{
 
                 element.parentNode.style.display = "none";
                 element.parentNode.parentNode.style.visibility = "hidden";
-                // let num_of_alert = document.querySelector(".container_alert").children;
-                // console.log(num_of_alert.length);
-
-                // if (num_of_alert.length == 0) element.parentNode.parentNode.style.display = "none";
             })
         });
     }
 }
-
-// export let nombre = "Testing";
 export default Alerts;

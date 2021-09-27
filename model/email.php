@@ -1,11 +1,11 @@
 <?php
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
-    require "../../assets/PHPMailer-master/src/Exception.php";
-    require "../../assets/PHPMailer-master/src/PHPMailer.php";
-    require "../../assets/PHPMailer-master/src/SMTP.php";
+    require "../mc_assets/PHPMailer-master/src/Exception.php";
+    require "../mc_assets/PHPMailer-master/src/PHPMailer.php";
+    require "../mc_assets/PHPMailer-master/src/SMTP.php";
 
-    class B_ContactEmail{
+    class ContactEmail_model{
 
         function __construct(){
             // $this->email = new PHPMailer\PHPMailer\PHPMailer();

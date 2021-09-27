@@ -14,7 +14,7 @@ form.addEventListener("submit", e => {
    
         let data = new FormData(form);
 
-        fetch("business/mails/contact_email.php", {method: "POST", body: data }).
+        fetch("../controller/business/mails/contact_email.php", {method: "POST", body: data }).
 
         then(function(response){
 
