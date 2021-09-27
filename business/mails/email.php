@@ -1,57 +1,61 @@
 <?php
-
-    require("../../assets/PHPMAILER/src/PHPMAILER.php");
-
-    require("../../assets/PHPMAILER/src/SMTP.php");
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\Exception;
+    require "../../assets/PHPMailer-master/src/Exception.php";
+    require "../../assets/PHPMailer-master/src/PHPMailer.php";
+    require "../../assets/PHPMailer-master/src/SMTP.php";
 
     class B_ContactEmail{
 
-        private function sendContactEmail($name,$last_name,$cel,$user_email,$comment){
-
-            $email = new PHPmailer();
+        function __construct(){
+            // $this->email = new PHPMailer\PHPMailer\PHPMailer();
+            $this->email = new PHPMailer();
+        }
+        function sendContactEmail($name,$last_name,$cel,$user_email,$comment){
             try {
 
-                // $email->SMTPdEBUG = 0;
-                $email->SMTPdEBUG = SMTP::DEBUG_SERVER;
+                $this->email->SMTPDebug = SMTP::DEBUG_SERVER;
 
-                $email->isSMTP();
+                $this->email->isSMTP();
 
-                $email->Host = "smtp.gmail.com";
+                $this->email->Host = "smtp.gmail.com";
 
-                $email->SMTPAuth = true;
+                $this->email->SMTPAuth = true;
 
-                $email->Username = "aldasi2000@hotmail.com";
-                $email->Password = "Sanluis8";
+                $this->email->Username = "aldasi2000@hotmail.com";
+                $this->email->Password = "Sanluis8";
 
 
-                $email->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+                $this->email->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 
-                $email->Port = 587;
+                $this->email->Port = 587;
 
-                $email->setFrom("aldasi2000@hotmail.com", $name . " " . $last_name);
+                $this->email->setFrom("aldasi2000@hotmail.com", $name . " " . $last_name);
 
-                $email->addAddress("aldasi2000@hotmail.com");
+                $this->email->addAddress("aldasi2000@hotmail.com");
 
-                $email->Charset = "UTF-8";
+                $this->email->Charset = "UTF-8";
 
-                $email->isHTML(true);
+                $this->email->isHTML(true);
 
-                $email->Subject = utf8_decode("Consulta de Cliente";
+                $this->email->Subject = utf8_decode("Consulta de Cliente");
 
-                $email->Body = utf8_decode('Nombre del cliente: ' . $name . " " . $last_name . '<br>
+                $this->email->Body = utf8_decode('Nombre del cliente: ' . $name . " " . $last_name . '<br>
                 
                     Número de teléfono:' . $cel . '<br>
                     
                     Dirección de correo: ' . $user_email . '<br>
                     
-                    Consulta: ' . $comment)
+                    Consulta: ' . $comment);
 
-                $email->send();
+                $this->email->send();
 
                return true;
 
             } catch (Exception $e) {
-                return false
+                echo $e . "Error al enviar el correo";
+                return false;
+                
             }
 
         }

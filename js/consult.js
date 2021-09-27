@@ -1,5 +1,6 @@
 "use strict";
 import Alerts from "./alerts.js";
+import {sendImage, sendConsult} from "./contact_email.js";
 
 let alerts = new Alerts();
 let form = document.getElementById("contact_form");
@@ -20,10 +21,13 @@ form.addEventListener("submit", e => {
             return response.json();
         }).then(function(data){
 
-            alerts.success("Éxito al enviar correo","El correo ha sido enviado exitosamente", 100000)
+            alerts.success("Éxito al enviar correo","El correo ha sido enviado exitosamente", 5000);
+            console.log(data);
+
         }).
         catch(function(er){
-            alerts.error("Error al enviar correo","Ha ocurrido un error al enviar el correo, por favor inténtelo más tarde", 5000)
+            alerts.error("Error al enviar correo","Ha ocurrido un error al enviar el correo, por favor inténtelo más tarde", 5000);
+            console.log(er);
         })
 
     }

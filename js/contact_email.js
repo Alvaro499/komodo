@@ -19,7 +19,7 @@ inputs_error.forEach(element => {
     element.style.color = "#E40017";
 });
 
-function sendConsult(){
+export function sendConsult(){
     let cont_error = 0;
 
     if (user_name.value == "" || user_name.value == null || !regex_name.test(user_name.value)) {
@@ -84,7 +84,7 @@ function sendConsult(){
     }
 }
 
-function sendImage(){
+export function sendImage(){
     let cont_error_image = 0;
 
     function loadImage(){

@@ -49,6 +49,7 @@
 
 .alert_info{
     letter-spacing: 1px;
+    margin-left: 5px;
 }
 
 .title_icon{
@@ -93,7 +94,7 @@
 
     @media (min-width: 1200px){
         .alert{
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             padding: 1em 1em;
         }
 

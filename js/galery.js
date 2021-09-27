@@ -72,11 +72,14 @@ let download_btn = document.querySelector(".download_img");
 
         })
 
-        close.addEventListener("click", e =>{
-
-            if(modal.classList.contains("modal_cont_on"))
-                modal.classList.remove("modal_cont_on");
-                modal.classList.add("modal_cont");
-                document.querySelector("body").style.overflow = "initial"; 
-            })
     })
+
+    close.addEventListener("click", e =>{
+
+        if(modal.classList.contains("modal_cont_on"))
+            modal.classList.remove("modal_cont_on");
+            modal.classList.add("modal_cont");
+            document.querySelector("body").style.overflow = "initial";
+            console.log(document.querySelectorAll("canvas"));
+            document.querySelector("canvas").remove();
+        })
