@@ -1,8 +1,4 @@
 /* HEADER */
-/* body{
-    overflow: hidden;
-} */
-
 .header_top_nav{
     width: 100%;
     height: auto;
@@ -179,11 +175,8 @@
         
         .banner p{
             font-size: 1.6rem;
-            text-align: center;
-            
-        }
-
-        
+            text-align: center;   
+        }   
     }
 
 

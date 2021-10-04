@@ -1,6 +1,5 @@
 "use strict";
 
-let form_valid = document.getElementById("contact_form");
 let user_name = document.getElementById("user_name");
 let last_name = document.getElementById("last_name");
 let cel = document.getElementById("cel");

@@ -16,6 +16,3 @@ btn_menu.addEventListener("click", function(event){
 
     }
 });
-
-//Responsive Active/Desactive Menu
-

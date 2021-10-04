@@ -3,6 +3,7 @@ let close = document.querySelector(".close");
 let photos = document.querySelectorAll(".photos");
 let name_img = document.querySelector(".bracelet_name > span");
 let price = document.querySelector(".bracelet_price > span");
+let stock = document.querySelector(".bracelet_stock > span");
 let download_btn = document.querySelector(".download_img");
 
 //BOTON DE DESCARGA
@@ -48,12 +49,16 @@ let download_btn = document.querySelector(".download_img");
 
         photos[index].addEventListener("click", function(e){
             let url_img = photos[index].children[0].attributes[0].nodeValue;
-            name_img.textContent = photos[index].children[1].textContent;
-            price.textContent = photos[index].children[2].textContent;
-            let name_img_text = photos[index].children[1].textContent;
-
+            //Se obtiene la URL de la img seleccionada por el usuario
             let img_modal = document.querySelector(".img_modal");
             img_modal.src = url_img;
+
+            name_img.textContent = photos[index].children[1].textContent;
+            price.textContent = photos[index].children[2].textContent;
+            stock.textContent= photos[index].children[3].textContent;
+            let name_img_text = photos[index].children[1].textContent;
+
+            
             downloadImage(url_img,img_modal,name_img_text);
 
             if(modal.classList.contains("modal_cont_on") === false){

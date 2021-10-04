@@ -1,6 +1,6 @@
 "use strict";
 import Alerts from "./alerts.js";
-import {sendImage, sendConsult} from "./contact_email.js";
+import {sendImage, sendConsult} from "./contact_validation.js";
 
 let alerts = new Alerts();
 let form = document.getElementById("contact_form");
@@ -9,6 +9,7 @@ let result = sendImage();
 form.addEventListener("submit", e => {
     
     e.preventDefault();
+    // let data = new form;
 
     if (result == 0 && sendConsult()) {
    
