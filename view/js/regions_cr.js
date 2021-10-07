@@ -52,9 +52,11 @@
 
             fetch("https://ubicaciones.paginasweb.cr/provincia/" + id_province + "/cantones.json")
             .then(function(res){
+                console.log(res);
                 return res.json();
             })
             .then(function(data){
+                console.log(data);
                 select_canton.innerHTML = " ";
                 let cantones = data;
                 select_canton.innerHTML = '<option value="">Selecciona tu cantón:</option>';

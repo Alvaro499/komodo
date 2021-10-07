@@ -85,8 +85,7 @@
 
         <!-- FORMULARIO DE PEDIDO -->
         <section class="order_confirm">
-
-
+            
             <article class="order_cart">
 
                 <h3>Tus productos:</h3>
@@ -99,6 +98,8 @@
                         <img src="../assets/img/galery/pulsera5.jpeg" alt="Producto seleccionado: ">
                         <p><strong>Nombre: Agatha-Ojo de Tigre</strong></p>
                         <p><strong>Precio: 3500.00</strong></p>
+                        <p hidden aria-hidden="true"></p>
+
                     </div>
                     <div class="cart_options">
                         
@@ -136,7 +137,7 @@
 
                     <label for="email">Correo Electrónico:</label>
                     <input type="email" name="email" id="email">
-                    <div class="input_error error_email">Escriba su correo electrónico</div>
+                    <div class="input_error error_email">*Escriba su correo electrónico</div>
 
                     <label for="province">Provincia</label>
                     <select name="province" id="province">
@@ -159,7 +160,7 @@
 
                     <label for="direction">Dirección (calle):</label>
                     <textarea name="direction" id="direction" cols="30" rows="10"></textarea>
-                    <div class="input_error error_postal">*Escriba su dirrección de vivienda. Recuerde que esta información es para <strong>Correos Costa Rica</strong></div>
+                    <div class="input_error error_postal">*Escriba su dirrección. Recuerde que esta información es para <strong>Correos Costa Rica</strong>ya que la entrega la realizan ellos</div>
 
                     <input type="submit" value="Confirmar pedido" class="btn order_btn" name="send_order">
                 </form>
@@ -234,7 +235,6 @@
             }
         }
         btn_info.addEventListener("click",moreInfo);
-
     </script>
 
     <script type="text/javascript" src="../js/regions_cr.js"></script>

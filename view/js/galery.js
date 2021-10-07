@@ -4,6 +4,7 @@ let photos = document.querySelectorAll(".photos");
 let name_img = document.querySelector(".bracelet_name > span");
 let price = document.querySelector(".bracelet_price > span");
 let stock = document.querySelector(".bracelet_stock > span");
+let id = document.querySelector(".bracelet_id");
 let download_btn = document.querySelector(".download_img");
 
 //BOTON DE DESCARGA
@@ -56,6 +57,7 @@ let download_btn = document.querySelector(".download_img");
             name_img.textContent = photos[index].children[1].textContent;
             price.textContent = photos[index].children[2].textContent;
             stock.textContent= photos[index].children[3].textContent;
+            id.textContent= photos[index].children[4].textContent;
             let name_img_text = photos[index].children[1].textContent;
 
             
