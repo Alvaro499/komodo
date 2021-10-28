@@ -1,8 +1,8 @@
 <?php
 session_start();
     var_dump($_SESSION["order_products"]);
-
-    echo "<br>";
+    echo "<br><br><br>";
+    var_dump($_SESSION["order_products"]);
     
     require_once("../model/email.php");
     echo "Proando probando";
@@ -22,10 +22,10 @@ session_start();
         $order_date = $_POST["order_date"];
         $order_hour = $_POST["order_hour"];
 
-        echo $order_hour;
-        echo "<br>" . $order_date;
-
         $all_products = $_SESSION["order_products"];
+
+        echo "<br><br><br>";
+        var_dump($all_products);
 
         if( (empty($name) || empty($surname_1) || empty($surname_2) || empty($cel)) || empty($email) || empty($province) || empty($canton) || empty($district) || empty($postal_code) || empty($direction) ){
             

@@ -7,3 +7,5 @@ if (isset($_SESSION["order_products"])) {
     echo "Sesion no definida";
     $_SESSION["order_products"] = json_decode($_POST["arr_products"]);
 }
+
+var_dump($_SESSION["order_products"]);

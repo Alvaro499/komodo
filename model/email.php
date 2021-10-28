@@ -62,11 +62,11 @@
                     <body>
                         <div style="width:100%; padding: 25px 0">
                             <div style="width: 100%; text-align: center;">
-                                <img style="width: 15%; object-fit: contain;" src="../assets/logo/logo.svg" alt="Logo">
+                                <img style="width: 15%; object-fit: contain;" src="cid:logo" alt="Logo">
                             </div>
                     
                             <table  width="100%" style="position: relative; margin-top: 25px;">
-                                <tr><td style="position: absolute; z-index: 0; background: #E94A26; width: 100%; height: 75px;"></td></tr>
+                                <tr><td style="position: absolute; z-index: 0; background: #E94A26; width: 100%; height: 55px;"></td></tr>
                                 <tr>
                                     <td>
                                         <table width="90%" style="position: relative; z-index: 1; top: 50px; left: 50%; transform: translate(-50%,0); background: #ffffff; height: auto; box-shadow: 6px  10px 8px #000000; padding: 25px 2%;">
@@ -95,13 +95,13 @@
                             
                                                 <tr>
                                                     <td width="35%" style="font-size: 1.2rem; text-align: center; padding: 15px 0 0 0"><strong>Consulta:</strong></td>
-                                                    <td width="65%" style="font-size: 1.2rem; padding: 20px 0 25px 0; text-align: justify;">'. $comment . '</td>
+                                                    <td width="65%" style="font-size: 1.2rem; padding: 20px 0 25px 0; text-align: center;">'. $comment . '</td>
                                                 </tr>
                                             </tbody>
                                         </table>
                                     </td>
                                 </tr>
-                                <tr><td style="position: absolute; z-index: 0; background: #E94A26; width: 100%; height: 75px;"></td></tr>
+                                <tr><td style="position: absolute; z-index: 0; background: #E94A26; width: 100%; height: 55px;"></td></tr>
                                 
                             </table>
                         </div>
@@ -176,7 +176,7 @@
 
                 $total_price = "";
                 for ($i=0; $i <count($all_products) ; $i++) { 
-                    $total_price += $all_products[0]->price;
+                    $total_price += $all_products[$i]->price;
                 };
 
                 //https://content-myemma-com.translate.goog/blog/css-in-html-emails-what-you-need-to-know-to-get-started?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=nui%2Csc
@@ -187,8 +187,10 @@
 
                     <header style="width: auto; margin: 50px 2% 50px 2%; text-align: center; position: relative;">
 
-                        <img src="cid:logo" alt="Logo" style="margin-bottom: 50px; width: 100%;height: 100px; object-fit: contain;">
-        
+                        <div style="width: 100%; text-align: center;">
+                            <img style="width: 15%; object-fit: contain;" src="cid:logo" alt="Logo">
+                        </div>
+
                         <div style="width: 100%; text-align: center;">
 
                             <button
@@ -372,7 +374,7 @@
 
                 $total_price = "";
                 for ($i=0; $i <count($all_products) ; $i++) { 
-                    $total_price += $all_products[0]->price;
+                    $total_price += $all_products[$i]->price;
                 };
 
                 //https://content-myemma-com.translate.goog/blog/css-in-html-emails-what-you-need-to-know-to-get-started?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=nui%2Csc
@@ -383,7 +385,9 @@
 
                     <header style="width: auto; margin: 50px 5% 50px 5%; text-align: center; position: relative;">
 
-                        <img src="cid:logo" alt="Logo" style="margin-bottom: 50px; width: 100%;height: 100px; object-fit: contain;">
+                        <div style="width: 100%; text-align: center;">
+                            <img style="width: 15%; object-fit: contain;" src="cid:logo" alt="Logo">
+                        </div>
         
                         <div style="width: 100%; text-align: center;">
 

@@ -84,11 +84,6 @@ let form = document.querySelector("#form");
 form.addEventListener("submit", function(e){
 
     e.preventDefault();
-    
-    let order_date = document.querySelector("#order_date");
-    let order_hour = document.querySelector("#order_hour");
-    console.log(order_hour.value);
-    console.log(order_date.value);
 
     //Verificar la existencia de productos en pedido
     let verify = shopping_cart.verifyMyProducts();
@@ -96,6 +91,8 @@ form.addEventListener("submit", function(e){
 
     let list_products = shopping_cart.getProductLocalStorage();
     let products_json = JSON.stringify(list_products);
+
+    //El FormData guarda los datos como string por eso debemos usar stringify para guardar datos
     let products_form = new FormData();
     products_form.append("arr_products",products_json);
 
@@ -116,7 +113,7 @@ form.addEventListener("submit", function(e){
             console.log(res);
             setTimeout(() => {
                 alerts.success("Éxito al enviar su pedido", "Su pedido ha sido enviado con éxito, pronto estaremos en contacto con usted",7000);    
-            }, 3000);
+            }, 4500);
         })
         .catch(function(err){
             console.log(err);
