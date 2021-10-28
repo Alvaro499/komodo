@@ -1,7 +1,9 @@
 "use strict";
 
 let user_name = document.querySelector("#name");
-let surnames = document.querySelector("#surnames");
+// let surnames = document.querySelector("#surnames");
+let surname_1 = document.querySelector("#surname_1");
+let surname_2 = document.querySelector("#surname_2");
 let cel = document.querySelector("#cel");
 let email = document.querySelector("#email");
 let province = document.querySelector("#province");
@@ -33,14 +35,24 @@ export function sendOrder(){
         user_name.style.border = "3px solid #54E346";
     }
 
-    if (surnames.value == null || surnames.value == "" || !regex_name.test(surnames.value)) {
+    if (surname_1.value == null || surname_1.value == "" || !regex_name.test(surname_1.value)) {
 
-        surnames.style.border = "3px solid #E40017";
-        surnames.nextElementSibling.style.display = "block";
+        surname_1.style.border = "3px solid #E40017";
+        surname_1.nextElementSibling.style.display = "block";
         cont_error++;
     }else{
-        surnames.nextElementSibling.style.display = "none";
-        surnames.style.border = "3px solid #54E346";
+        surname_1.nextElementSibling.style.display = "none";
+        surname_1.style.border = "3px solid #54E346";
+    }
+
+    if (surname_2.value == null || surname_2.value == "" || !regex_name.test(surname_2.value)) {
+
+        surname_2.style.border = "3px solid #E40017";
+        surname_2.nextElementSibling.style.display = "block";
+        cont_error++;
+    }else{
+        surname_2.nextElementSibling.style.display = "none";
+        surname_2.style.border = "3px solid #54E346";
     }
 
     if (cel.value == null || cel.value == "" || !regex_cel.test(cel.value)) {
@@ -112,6 +124,12 @@ export function sendOrder(){
         direction.nextElementSibling.style.display = "none";
         direction.style.border = "3px solid #54E346";
     }
+
+    // let date = new Date();
+    // order_date.value = date.toLocaleString();
+    // order_hour.value = date.toLocaleTimeString()
+    // console.log(order_date);
+    // console.log(order_hour);
 
     if (cont_error == 0) {
 

@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="../css/normalize.css">
     <link rel="stylesheet" type="text/css" href="../css/galery.css">
     <link rel="stylesheet" type="text/css" href="../css/shared_styles/footer_bridge.css">
+    <link rel="stylesheet" type="text/css" href="../css/shared_styles/alerts.css">
     <link rel="stylesheet" type="text/css" href="../css/shared_styles/shopping_cart.css">
 </head>
 <body>
@@ -19,7 +20,6 @@
 
         <div class="modal_cont">
             <div class="modal">
-
                 <div class="top_options">
                     <button class="info_btn btn">Más información<i class="fas fa-question"></i></button>
                     <button class="close btn"><i class="fas fa-times"></i></button>
@@ -43,6 +43,7 @@
             </div>
         </div>
 
+        
         <!-- SHOPPING CART -->
 
         <div class="shopping_cart_container" key="0">
@@ -52,43 +53,37 @@
                     <button class="btn close_cart" title="Cerrar carrito"><i class="fas fa-times"></i></button>
                 </div>
                 <div class="products_list">
-                    <div class="product">
-                        <img src="../assets/img/galery/pulsera8.jpeg" alt="">
-                        <div class="product_info">
-                            <p>Pulsera</p>
-                            <p>5000</p>
-                        </div>
-                        <p class="id" hidden aria-hidden="true">5</p>
-                        <button class="btn delete_product"><i class="fas fa-trash-alt"></i></button>
-                    </div>
-
-                    <div class="product">
-                        <img src="../assets/img/galery/pulsera8.jpeg" alt="">
-                        <div class="product_info">
-                            <p>Pulsera</p>
-                            <p>5000</p>
-                        </div>
-                        <p class="id" hidden aria-hidden="true">5</p>
-                        <button class="btn delete_product"><i class="fas fa-trash-alt"></i></button>
-                    </div>
-
-                    <div class="product">
-                        <img src="../assets/img/galery/pulsera8.jpeg" alt="">
-                        <div class="product_info">
-                            <p>Pulsera</p>
-                            <p>5000</p>
-                        </div>
-                        <p class="id" hidden aria-hidden="true">5</p>
-                        <button class="btn delete_product"><i class="fas fa-trash-alt"></i></button>
-                    </div>
                 </div>
-                <!-- <button class="btn close_cart" title="Cerrar carrito"><i class="fas fa-times"></i></button> -->
             </div>
         </div>
 
         <!-- BOTON ABRIR CARRITO -->
         <div class="cart_open_cont">
             <button class="btn cart_open" title="Abrir mi carrito"><i class="fas fa-shopping-cart"></i></button>
+        </div>
+
+
+
+        <!-- ALERTAS -->
+        <div class="container_alert">
+
+            <div class="alert alert_error">
+                <div class="title_icon">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <span class="title_alert"></span>
+                </div>
+                <span class="alert_info"></span>
+                <button class="close_alert btn"><i class="fas fa-times"></i></button>
+            </div>
+
+            <div class="alert alert_success">
+                <div class="title_icon">
+                    <i class="fas fa-check"></i>
+                    <span class="title_alert"></span>
+                </div>
+                <span class="alert_info"></span>
+                <button class="close_alert btn"><i class="fas fa-times"></i></button>
+            </div>
         </div>
         
 
@@ -191,15 +186,6 @@
                         <p class="price" aria-hidden="true" hidden>8500,00</p>
                         <p class="stock" aria-hidden="true" hidden>25</p>
                         <p class="id_product" aria-hidden="true" hidden>4</p>
-                    </div>
-
-                    <div class="photos" title="Click para más información">
-                        <img src="../assets/img/galery/pulsera5.jpeg" alt="">
-                        <p class="info">Pulsera 5</p>
-                        <p class="info">Pulsera 4</p>
-                        <p class="price" aria-hidden="true" hidden>2500,00</p>
-                        <p class="stock" aria-hidden="true" hidden>32</p>
-                        <p class="id_product" aria-hidden="true" hidden>5</p>
                     </div>
 
                     <div class="photos" title="Click para más información">
@@ -353,6 +339,7 @@
         }
     </script>
     <script type="module" src="../js/shopping_cart.js"></script>
+    <script type="module" src="../js/gallery_controller.js"></script>
 
 </body>
 </html>

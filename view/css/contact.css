@@ -296,9 +296,13 @@ hr{
     cursor: pointer;
 }
 
+.contact li:hover{
+    background: #00000050;
+}
+
 .contact li i{
     font-size: 2rem;
-    margin: 1rem 0.5rem;
+    margin: 0.5rem 0.5rem;
     transition: all 1s;
 }
     .fa-facebook-square{

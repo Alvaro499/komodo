@@ -9,10 +9,36 @@
     <link rel="stylesheet" type="text/css" href="../css/normalize.css">
     <link rel="stylesheet" type="text/css" href="../css/order.css">
     <link rel="stylesheet" type="text/css" href="../css/shared_styles/footer_bridge.css">
+    <link rel="stylesheet" type="text/css" href="../css/shared_styles/alerts.css">
 </head>
 <body>
     <div class="container">
 
+        <!-- ALERTAS -->
+        <div class="container_alert">
+
+            <div class="alert alert_error">
+                <div class="title_icon">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <span class="title_alert"></span>
+                </div>
+                <span class="alert_info"></span>
+                <button class="close_alert btn"><i class="fas fa-times"></i></button>
+            </div>
+
+            <div class="alert alert_success">
+                <div class="title_icon">
+                    <i class="fas fa-check"></i>
+                    <span class="title_alert"></span>
+                </div>
+                <span class="alert_info"></span>
+                <button class="close_alert btn"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+
+
+
+        <!-- CABECERA -->
         <header class="header_top_nav">
 
             <section class="menu_logo">
@@ -27,7 +53,7 @@
                     <ul class="menu">
                         <li><a href="index.html">Inicio</a></li>
                         <li><a href="gallery.html">Catálogo</a></li>
-                        <li><a href="pedidos.html">Pedidos</a></li>
+                        <li><a href="order.html">Pedidos</a></li>
                         <li><a href="contact.html">Contacto</a></li>
                     </ul>
                 </nav>
@@ -89,30 +115,25 @@
             <article class="order_cart">
 
                 <h3>Tus productos:</h3>
-                <p>Aquí podrás ver los productos que has agregado al carrito desde la página de <strong>Galería</strong>. Si desea eliminar alguno de su pedido solo seleccione dicha imagen y luego presione en el ícono de <span><i class="fas fa-trash-alt"></i></span></p>
+                <p>Aquí podrás ver los productos que has agregado al carrito desde la página de <strong>Galería</strong>. Si desea eliminar alguno de su pedido solo seleccione dicha imagen y luego presione en el ícono de <span><i class="fas fa-trash-alt"></i></span>. También puedes eliminar los productos desde la pagina de Galería.</p>
                 <br>
                 <p>Recuerda que al enviar el formulario de compra, estos productos serán los que se agreguen a tu orden.</p>
 
                 <div class="cart_content">
-                    <div class="cart_select">
-                        <img src="../assets/img/galery/pulsera5.jpeg" alt="Producto seleccionado: ">
-                        <p><strong>Nombre: Agatha-Ojo de Tigre</strong></p>
-                        <p><strong>Precio: 3500.00</strong></p>
-                        <p hidden aria-hidden="true"></p>
-
+                    <div class="cart_select_cont">
+                        <!-- <div class="cart_select">
+                            <img src="../assets/img/galery/pulsera5.jpeg" alt="Producto seleccionado: ">
+                            <p><strong>Nombre: <span>Agatha-Ojo de Tigre</span></strong></p>
+                            <p><strong>Precio: <span>3500.00</span></strong></p>
+                            <p hidden aria-hidden="true"><span></span></p>
+                        </div> -->
                     </div>
-                    <div class="cart_options">
-                        
-                        <img src="../assets/img/galery/pulsera2.jpeg" alt="" class="other_products">
-                        <img src="../assets/img/galery/pulsera1.jpeg" alt="" class="other_products">
-                        <img src="../assets/img/galery/pulsera6.jpeg" alt="" class="other_products">
-                        <img src="../assets/img/galery/pulsera3.jpeg" alt="" class="other_products">
-                        <img src="../assets/img/galery/pulsera5.jpeg" alt="" class="other_products">
-
-                        <!-- <div class="options">
+                    <div class="cart_options_cont">
+                        <!-- <div class="cart_options">
                             <img src="../assets/img/galery/pulsera2.jpeg" alt="" class="other_products">
-                            <p class="name"></p>
-                            <p class="price"></p>
+                            <p class="name" aria-hidden="true" hidden></p>
+                            <p class="price" aria-hidden="true" hidden></p>
+                            <p class="id" aria-hidden="true" hidden></p>
                         </div> -->
                     </div>
                     <button class="btn btn_delete" title="Eliminar producto seleccionado" title="Eliminar producto"><i class="fas fa-trash-alt"></i></button>
@@ -120,16 +141,21 @@
             </article>
             <article class="order_form">
 
+                <!-- action="<?php echo htmlspecialchars)$_SERVER['PHP_SELF']);?>" -->
                 <form id="form">
                     <h3>Formulario de pedido</h3>
 
                     <label for="name">Nombre:</label>
                     <input type="text" name="name" id="name">
-                    <div class="input_error error_name">*Escriba su nombre</div>
+                    <div class="input_error error_name">*Escriba su nombre, sin espacios en blanco al final o al inicio</div>
 
-                    <label for="surnames">Apellidos:</label>
-                    <input type="text" name="surnames" id="surnames">
-                    <div class="input_error error_surnames">*Escriba sus dos apellidos</div>
+                    <label for="surname_1">Primer Apellido:</label>
+                    <input type="text" name="surname_1" id="surname_1">
+                    <div class="input_error error_surname_1">*Escriba su primer apellido, sin espacios en blanco al final o al inicio</div>
+
+                    <label for="surname_2">Segundo Apellido:</label>
+                    <input type="text" name="surname_2" id="surname_2">
+                    <div class="input_error error_surname_2">*Escriba su segundo apellido, sin espacios al final o al inicio</div>
 
                     <label for="cel">Número de Celular:</label>
                     <input type="tel" name="cel" id="cel">
@@ -162,8 +188,13 @@
                     <textarea name="direction" id="direction" cols="30" rows="10"></textarea>
                     <div class="input_error error_postal">*Escriba su dirrección. Recuerde que esta información es para <strong>Correos Costa Rica</strong>ya que la entrega la realizan ellos</div>
 
+                    <input aria-hidden="true" hidden type="text" name="order_date" id="order_date">
+                    <input aria-hidden="true" hidden type="text" name="order_hour" id="order_hour">
+
                     <input type="submit" value="Confirmar pedido" class="btn order_btn" name="send_order">
                 </form>
+                <div class="input_products" aria-hidden="true" hidden>
+                </div>
 
             </article>    
                 
@@ -238,6 +269,8 @@
     </script>
 
     <script type="text/javascript" src="../js/regions_cr.js"></script>
+    <script type="module" src="../js/shopping_cart.js"></script>
+    <script type="module" src="../js/order_controller.js"></script>
     <script type="module" src="../js/order_validation.js"></script>
     <script type="module" src="../js/order.js"></script>
 </body>

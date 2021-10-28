@@ -659,13 +659,17 @@ img.icon_cards{
         width: auto;
         height: auto;
         background: var(--main-second-color);;
-        color: #ffffff;
         font-size: 0.8rem;
         padding: 0.5em;
         margin-bottom: 15px;
         border-radius: 0.5rem;
         align-self: flex-end;
         transition: transform 0.5s;
+    }
+
+    .btn_banner_2 a{
+        color: #ffffff;
+        font-weight: 600;
     }
 
     .btn_banner_2:hover{

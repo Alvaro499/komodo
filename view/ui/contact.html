@@ -21,7 +21,7 @@
                     <span class="title_alert"></span>
                 </div>
                 <span class="alert_info"></span>
-                <button class="close btn"><i class="fas fa-times"></i></button>
+                <button class="close_alert btn"><i class="fas fa-times"></i></button>
             </div>
 
             <div class="alert alert_success">
@@ -30,7 +30,7 @@
                     <span class="title_alert"></span>
                 </div>
                 <span class="alert_info"></span>
-                <button class="close btn"><i class="fas fa-times"></i></button>
+                <button class="close_alert btn"><i class="fas fa-times"></i></button>
             </div>
         </div>
 
@@ -47,8 +47,8 @@
     
                     <ul class="menu">
                         <li><a href="index.html">Inicio</a></li>
-                        <li><a href="galery.html">Catálogo</a></li>
-                        <li><a href="pedidos.html">Pedidos</a></li>
+                        <li><a href="gallery.html">Catálogo</a></li>
+                        <li><a href="order.html">Pedidos</a></li>
                         <li><a href="contact.html">Contacto</a></li>
                     </ul>
                 </nav>
@@ -90,7 +90,7 @@
                     <div class="input_error email_error">*Escriba su correo electrónico</div>
 
                     <label for="image">Selecciona al menos una imagen:</label>
-                    <input type="file" id="image" name="image[]" multiple="true">
+                    <input type="file" id="image" name="file[]" multiple="true">
                     <div class="input_error img_error">*Solo se permiten enviar 4 imágenes como máximo, estas deben ser en formato PNG o JPG y menores a 15MB</div>
 
         
@@ -98,7 +98,7 @@
                     <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
                     <div class="input_error comment_error">*Escriba su consulta</div>
     
-                    <input type="submit" value="Enviar">
+                    <input type="submit" name="submit" value="Enviar">
         
                 </form>
                 

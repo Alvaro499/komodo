@@ -1,4 +1,5 @@
-let modal = document.querySelector(".modal_cont");
+let modal_cont = document.querySelector(".modal_cont");
+let modal = document.querySelector(".modal");
 let close = document.querySelector(".close");
 let photos = document.querySelectorAll(".photos");
 let name_img = document.querySelector(".bracelet_name > span");
@@ -63,17 +64,17 @@ let download_btn = document.querySelector(".download_img");
             
             downloadImage(url_img,img_modal,name_img_text);
 
-            if(modal.classList.contains("modal_cont_on") === false){
+            if(modal_cont.classList.contains("modal_cont_on") === false){
     
-                modal.classList.add("modal_cont_on");
-                modal.classList.remove("modal_cont");
+                modal_cont.classList.add("modal_cont_on");
+                modal_cont.classList.remove("modal_cont");
                 document.querySelector("body").style.overflow = "hidden";
                
 
             }else{
-                modal.classList.remove("modal_cont_on");
-                modal.classList.add("modal_cont");
-                document.querySelector("body").style.overflow = "initial";
+                modal_cont.classList.remove("modal_cont_on");
+                modal_cont.classList.add("modal_cont");
+                document.querySelector("body").style.overflow = "visible";
             }
 
 
@@ -83,10 +84,9 @@ let download_btn = document.querySelector(".download_img");
 
     close.addEventListener("click", e =>{
 
-        if(modal.classList.contains("modal_cont_on"))
-            modal.classList.remove("modal_cont_on");
-            modal.classList.add("modal_cont");
-            document.querySelector("body").style.overflow = "initial";
-            console.log(document.querySelectorAll("canvas"));
+        if(modal_cont.classList.contains("modal_cont_on"))
+            modal_cont.classList.remove("modal_cont_on");
+            modal_cont.classList.add("modal_cont");
+            document.querySelector("body").style.overflow = "visible";
             document.querySelector("canvas").remove();
         })

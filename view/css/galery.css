@@ -406,20 +406,6 @@
 
 /* MODAL */
 
-.modal_cont_on{
-    background: #00000098;
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 201;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    visibility: visible;
-}
-
 .modal_cont{
     background: #00000098;
     width: 100%;
@@ -434,6 +420,20 @@
     visibility: hidden;
 }
 
+.modal_cont_on{
+    background: #00000098;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 201;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: visible;
+}
+
 .modal{
     width: 85vw;
     height: 95vh;
@@ -442,6 +442,16 @@
     display: grid;
     grid-template-columns: repeat(1, auto);
 }
+
+/* .modal_on{
+    width: 85vw;
+    height: 95vh;
+    background: #ffffff;
+    overflow: scroll;
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    visibility: visible !important;
+} */
 
 .top_options{
     width: 100%;

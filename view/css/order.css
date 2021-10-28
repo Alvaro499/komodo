@@ -337,7 +337,7 @@
         height: auto;
     }
 
-    .order_cart p{
+    .order_cart > p{
         text-align: justify;
     }
 
@@ -346,37 +346,45 @@
         flex-flow: column nowrap;
     }
 
-    .cart_select{
+    .cart_select_cont{
         display: flex;
         flex-flow: column nowrap;
     }
 
-    .cart_select > p, img{
+    .cart_select_cont > img{
         margin: 10px 0 10px 0;
         text-align: center;
     }
 
-    .cart_select img{
+    .cart_select_cont img{
         width: 100%;
         min-height: 200;
         max-height: 300px;
         object-fit: contain;
     }
 
-    .cart_options{
+    .cart_select p{
+        margin-top: 15px;
+    }
+
+    .cart_select p{
+        text-align: center;
+    }
+
+    .cart_options_cont{
         width: 100%;
         display: flex;
         flex-flow: row wrap;
         gap: 3px;
     }
 
-    .cart_options img{
+    .cart_options_cont img{
         width: 50px;
         height: 50px;
         object-fit: contain;
     }
 
-    .cart_options img:hover{
+    .cart_options_cont img:hover{
         opacity: 0.8;
         cursor: pointer;
         border: solid 2px var(--main-second-color);
@@ -465,7 +473,7 @@ form input[type="submit"]{
     @media (min-width: 550px){
 
         /* Order-Cart */
-        .cart_options img{
+        .cart_options_cont img{
             width: 75px;
             height: 75px;
         }
@@ -500,11 +508,11 @@ form input[type="submit"]{
             font-size: 1.2rem;
         }
 
-        .cart_select > p, img{
+        .cart_select_cont > p, img{
             margin: 25px 0 0 0;
         }
     
-        .cart_select img{
+        .cart_select_cont img{
             min-height: 350px;
             max-height: 400px;
         }
@@ -556,17 +564,17 @@ form input[type="submit"]{
             font-size: 1.4rem;
         }
     
-        .cart_select img{
+        .cart_select_cont img{
             width: 100%;
             min-height: 400px;
             max-height: 450px;
         }
 
-        .cart_options{
+        .cart_options_cont{
             column-gap: 10px;
         }
 
-        .cart_options img{
+        .cart_options_cont img{
             width: 100px;
             height: 100px;
         }
