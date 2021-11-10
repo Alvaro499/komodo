@@ -56,8 +56,8 @@
 
 .cart_open_cont{
     position: fixed;
-    top: 88%;
-    left: 82%;
+    bottom: 25px;
+    right: 15px;
     z-index: 199;
     cursor: pointer;
     transition: all 0.8s;
@@ -152,10 +152,10 @@
             /* padding: 2rem; */
         }
 
-        .cart_open_cont{
+        /* .cart_open_cont{
             top: 87%;
             left: 90%;
-        }
+        } */
 
         .cart_open{
             width: 50px;
@@ -171,8 +171,7 @@
         }
 
         .cart_open_cont{
-            top: 87%;
-            left: 90%;
+            right: 25px;
         }
 
         .cart_open{
@@ -241,8 +240,7 @@
         }
 
         .cart_open_cont{
-            top: 87%;
-            left: 93%;
+            right: 20px;
         }
 
         .cart_open{

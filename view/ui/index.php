@@ -23,10 +23,10 @@
                 <button class="btn btn_menu"><i class="fas fa-bars"></i>Menú</button>
 
                 <ul class="menu">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="gallery.html">Catálogo</a></li>
-                    <li><a href="order.html">Pedidos</a></li>
-                    <li><a href="contact.html">Contacto</a></li>
+                    <li><a href="index.php">Inicio</a></li>
+                    <li><a href="gallery.php">Catálogo</a></li>
+                    <li><a href="order.php">Pedidos</a></li>
+                    <li><a href="contact.php">Contacto</a></li>
                 </ul>
             </nav>
       </header>
@@ -88,15 +88,12 @@
             </div>
 
             <button class="btn_slider right"><i class="fas fa-arrow-right"></i></button>
-            <!-- <button class="right">></button> -->
             <button class="btn_slider left"><i class="fas fa-arrow-right"></i></button>
-            <!-- <button class="left"><</button> -->
-            <h2>Mira alguno de nuestros productos</h2>
         </div>
 
         <section class="btn_info_product">
-            <button class="btn btn_info catalogue">Ver Catálogo</button>
-            <button class="btn btn_info order">Realizar pedido</button>
+            <button class="btn btn_info catalogue"><a href="gallery.php">Ver Catálogo</a></button>
+            <button class="btn btn_info order"><a href="order.php">Realizar pedido</a></button>
         </section>
 
         <!-- INFO CARDS -->
@@ -149,7 +146,7 @@
             <div class="banner_2_content">
                 <h2>Calidad Garantizada</h2>
                 <p>Nuestro catalogo siempre esta actualizado, por lo que podras ver cuales pulseras estan disponibles y cuales por el momento no</p>
-                <button class="btn btn_banner_2"><a href="order.html">Ver Catálogo</a></button>
+                <button class="btn btn_banner_2"><a href="order.php">Ver Catálogo</a></button>
             </div>
             <!-- <img src="assets/img/banner2_model.png" alt="Hombre Posando con pulsera" class="img_banner_2"> -->
             

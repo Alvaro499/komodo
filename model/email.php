@@ -19,25 +19,25 @@
 
                 $this->email->isSMTP();
 
-                // $this->email->Host = "smtp.gmail.com";
-                $this->email->Host = "smtp.live.com";
+                $this->email->Host = "smtp.gmail.com";
+                // $this->email->Host = "smtp.live.com";
 
                 $this->email->SMTPAuth = true;
 
-                $this->email->Username = "aldasi2000@hotmail.com";
-                $this->email->Password = "Sanluis8";
+                // $this->email->Username = "aldasi2000@hotmail.com";
+                // $this->email->Password = "cdx#2460SQ";
 
-                // $this->email->Username = "alvarosiles499@gmail.com";
-                // $this->email->Password = "2552LuisSan";
+                $this->email->Username = "komodocr21@gmail.com";
+                $this->email->Password = "Komodo24sq_";
 
 
                 $this->email->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 
                 $this->email->Port = 587;
 
-                $this->email->setFrom("aldasi2000@hotmail.com", $name . " " . $last_name);
+                $this->email->setFrom("komodocr21@gmail.com", $name . " " . $last_name);
 
-                $this->email->addAddress("aldasi2000@hotmail.com");
+                $this->email->addAddress("komodocr21@gmail.com");
 
                 $this->email->AddEmbeddedImage("../view/assets/logo/logo.png", "logo", "../view/assets/logo/logo.png");
                 
@@ -145,21 +145,23 @@
 
                 $this->email->isSMTP();
 
-                // $this->email->Host = "smtp.gmail.com";
-                $this->email->Host = "smtp.live.com";
+                $this->email->Host = "smtp.gmail.com";
+                // $this->email->Host = "smtp.live.com";
 
                 $this->email->SMTPAuth = true;
 
-                $this->email->Username = "aldasi2000@hotmail.com";
+                // $this->email->Username = "aldasi2000@hotmail.com";
 
-                $this->email->Password = "Sanluis8";
+                // $this->email->Password = "cdx#2460SQ";
+                $this->email->Username = "komodocr21@gmail.com";
+                $this->email->Password = "Komodo24sq_";
 
                 $this->email->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 
                 //RECORDAR CAMBIAR EL PUERTO CUANDO SE SUBA A UN SERVIDOR
                 $this->email->Port = 587;
 
-                $this->email->setFrom("aldasi2000@hotmail.com", "KOMODO");
+                $this->email->setFrom("komodocr21@gmail.com", "KOMODO");
 
                 $this->email->addAddress($email);
 
@@ -343,14 +345,16 @@
 
                 $this->email->isSMTP();
 
-                // $this->email->Host = "smtp.gmail.com";
-                $this->email->Host = "smtp.live.com";
+                $this->email->Host = "smtp.gmail.com";
+                // $this->email->Host = "smtp.live.com";
 
                 $this->email->SMTPAuth = true;
 
-                $this->email->Username = "aldasi2000@hotmail.com";
+                // $this->email->Username = "aldasi2000@hotmail.com";
 
-                $this->email->Password = "Sanluis8";
+                // $this->email->Password = "cdx#2460SQ";
+                $this->email->Username = "komodocr21@gmail.com";
+                $this->email->Password = "Komodo24sq_";
 
                 $this->email->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 
@@ -359,7 +363,7 @@
 
                 $this->email->setFrom("aldasi2000@hotmail.com", "KOMODO: Solicitud de pedido");
 
-                $this->email->addAddress("aldasi2000@hotmail.com");
+                $this->email->addAddress("komodocr21@gmail.com");
 
                 $this->email->Charset = "UTF-8";
 

@@ -215,8 +215,7 @@
 
 .slider_cont{
     margin-bottom: calc(25%);
-    background-image: radial-gradient(circle, white, black, black);
-    /* background: #000000; */
+    background: #AFB1B3;
     animation: radial 17s linear infinite alternate;
     width: auto;
     margin: auto;
@@ -298,56 +297,53 @@
 
 }
 
-@media (min-width: 768px){
+    /* MEDIA QUERIES - SLIDER */
+    @media (min-width: 768px){
 
-    .slider_title{
-        font-size: 2rem;
-        margin-bottom: 15px;
-        margin-left: 15px;
+        .slider_title{
+            font-size: 2rem;
+            margin-bottom: 15px;
+            margin-left: 15px;
+        }
+
+        .slider{
+            height: 450px;
+        }
+
+        .slider_img{
+            height: 60%;
+            margin-left: 5px;
+            margin-right: 5px;
+            top: -5%;
+        }
+
+        .slider_info{
+            font-size: 2rem;
+        }
     }
 
-    .slider{
-        height: 450px;
+
+    @media (min-width: 1400px){
+
+        .slider_title{
+            margin-left: 125px;
+        }
+
+        .slider_cont{
+            margin: 0 100px 100px;
+        }
+
+        .slider{
+            height: 600px;
+        }
+
+        .slider_img{
+            height: 65%;
+            margin-left: 15px;
+            margin-right: 15px;
+            top: -5%;
+        }
     }
-
-    .slider_img{
-        height: 60%;
-        margin-left: 5px;
-        margin-right: 5px;
-        top: -5%;
-    }
-
-    .slider_info{
-        font-size: 2rem;
-    }
-}
-
-
-@media (min-width: 1400px){
-
-    .slider_title{
-        margin-left: 125px;
-    }
-
-    .slider_cont{
-        margin: 0 100px 100px;
-    }
-
-    .slider{
-        height: 600px;
-    }
-
-    .slider_img{
-        height: 65%;
-        margin-left: 15px;
-        margin-right: 15px;
-        top: -5%;
-    }
-
-    /* .slider_info{
-        font-size: 2rem;
-    } */
-}
 
 
 
@@ -379,6 +375,10 @@
     overflow: hidden;
 }
 
+.catalogue a{
+    color: #000000;
+}
+
 .catalogue:before{
     content: "Ver Catálogo";
     background: var( --main-second-color);
@@ -407,9 +407,12 @@
 
 .order{
     background: var(--main-second-color);
-    color: #ffffff;
     position: relative;
     overflow: hidden;
+}
+
+.order a{
+    color: #ffffff;
 }
 
 .order:before{

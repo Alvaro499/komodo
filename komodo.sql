@@ -15,15 +15,37 @@ CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
 USE `mydb` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`products`
+-- Table `mydb`.`product`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`products` (
-  `idproducts` INT NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS `mydb`.`product` (
+  `id_product` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(200) NOT NULL,
-  `cost` INT NOT NULL,
-  `keywords` VARCHAR(200) NOT NULL,
+  `cost` DOUBLE NOT NULL,
+  `keywords` VARCHAR(250) NOT NULL,
   `color` VARCHAR(200) NOT NULL,
-  PRIMARY KEY (`idproducts`))
+  `stock` INT NOT NULL,
+  `url` TEXT NOT NULL,
+  `description` TEXT NOT NULL,
+  PRIMARY KEY (`id_product`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`client`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`client` (
+  `id_client` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(50) NOT NULL,
+  `first_surname` VARCHAR(50) NOT NULL,
+  `second_surname` VARCHAR(50) NOT NULL,
+  `cellphone` VARCHAR(50) NOT NULL,
+  `province` VARCHAR(50) NOT NULL,
+  `canton` VARCHAR(50) NOT NULL,
+  `district` VARCHAR(50) NOT NULL,
+  `postal_code` INT NOT NULL,
+  `direction_street` TEXT NOT NULL,
+  `cart_products` VARCHAR(200) NOT NULL,
+  PRIMARY KEY (`id_client`))
 ENGINE = InnoDB;
 
 
@@ -40,22 +62,25 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`clients`
+-- Table `mydb`.`invoice`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`clients` (
-  `idclients` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(50) NOT NULL,
-  `surnames` VARCHAR(100) NOT NULL,
-  `cellphone` VARCHAR(50) NOT NULL,
-  `province` VARCHAR(50) NOT NULL,
-  `canton` VARCHAR(50) NOT NULL,
-  `district` VARCHAR(50) NOT NULL,
-  `postal_code` INT NOT NULL,
-  `direction_street` TEXT NOT NULL,
-  `car_products` VARCHAR(200) NOT NULL,
+CREATE TABLE IF NOT EXISTS `mydb`.`invoice` (
+  `id_invoice` INT NOT NULL AUTO_INCREMENT,
+  `id_client` INT NOT NULL,
+  `code` INT NOT NULL,
+  `date` DATE NOT NULL,
+  `total` DOUBLE NOT NULL,
   `id_payment` INT NOT NULL,
-  PRIMARY KEY (`idclients`),
-  CONSTRAINT `fk_clients_payment1`
+  PRIMARY KEY (`id_invoice`),
+  INDEX `fk_invoice_clients1_idx` (`id_client` ASC),
+  UNIQUE INDEX `id_clients_UNIQUE` (`id_client` ASC),
+  INDEX `fk_invoice_payment1_idx` (`id_payment` ASC),
+  CONSTRAINT `fk_invoice_clients1`
+    FOREIGN KEY (`id_client`)
+    REFERENCES `mydb`.`client` (`id_client`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_invoice_payment1`
     FOREIGN KEY (`id_payment`)
     REFERENCES `mydb`.`payment` (`id_payment`)
     ON DELETE NO ACTION
@@ -64,35 +89,19 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`invoice`
+-- Table `mydb`.`invoice_detail`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`invoice` (
-  `id_invoice` INT NOT NULL AUTO_INCREMENT,
-  `code` INT NOT NULL,
-  `date` DATE NOT NULL,
-  `id_clients` INT NOT NULL,
-  PRIMARY KEY (`id_invoice`),
-  CONSTRAINT `fk_invoice_clients1`
-    FOREIGN KEY (`id_clients`)
-    REFERENCES `mydb`.`clients` (`idclients`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `mydb`.`invoice_details`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`invoice_details` (
-  `idinvoice_details` INT NOT NULL AUTO_INCREMENT,
-  `amount` INT NOT NULL,
-  `total` INT NOT NULL,
-  `id_products` INT NOT NULL,
+CREATE TABLE IF NOT EXISTS `mydb`.`invoice_detail` (
+  `id_invoice_detail` INT NOT NULL AUTO_INCREMENT,
+  `id_product` INT NOT NULL,
   `id_invoice` INT NOT NULL,
-  PRIMARY KEY (`idinvoice_details`),
+  `subtotal` DOUBLE NOT NULL,
+  PRIMARY KEY (`id_invoice_detail`),
+  INDEX `fk_invoice_details_products_idx` (`id_product` ASC),
+  INDEX `fk_invoice_details_invoice1_idx` (`id_invoice` ASC),
   CONSTRAINT `fk_invoice_details_products`
-    FOREIGN KEY (`id_products`)
-    REFERENCES `mydb`.`products` (`idproducts`)
+    FOREIGN KEY (`id_product`)
+    REFERENCES `mydb`.`product` (`id_product`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_invoice_details_invoice1`

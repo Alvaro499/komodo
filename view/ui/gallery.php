@@ -25,7 +25,9 @@
                     <button class="close btn"><i class="fas fa-times"></i></button>
                 </div>
                 <div class="img_container">
+                    <!-- <div class="img_sub_container"> -->
                     <img id="my_image" class="img_modal" alt="Pulsera seleccionada">
+                    <!-- </div> -->
                 </div>
                 <div class="modal_info">
                     <ul>
@@ -88,7 +90,6 @@
         
 
 
-
         <!-- CABECERA -->
         <header class="header_top_nav">
 
@@ -102,46 +103,56 @@
                     <button class="btn btn_menu"><i class="fas fa-bars"></i>Menú</button>
     
                     <ul class="menu">
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="gallery.html">Catálogo</a></li>
-                        <li><a href="order.html">Pedidos</a></li>
-                        <li><a href="contact.html">Contacto</a></li>
+                        <li><a href="index.php">Inicio</a></li>
+                        <li><a href="gallery.php">Catálogo</a></li>
+                        <li><a href="order.php">Pedidos</a></li>
+                        <li><a href="contact.php">Contacto</a></li>
                     </ul>
                 </nav>
 
+                
             </section>
 
-            <section class="banner">
-                <h1>¡Explora nuestro catálogo!</h1>
-                <form class="searcher">
-                    <label for="search" hidden>Busca algo más especifico en la galería...</label>
-                    <input type="search" class="search" placeholder="Busca algo más especifico...">
-                    
-                    <label for="search_for" title="Iniciar búsqueda"><i class="fas fa-search"></i></label>
-                    
-                    <input type="submit" id="search_for" aria-hidden="true" hidden>
-                </div>
-                
-            </form>
+            
         </header>
+
+        
+        <section class="banner">
+            <h1>¡Explora nuestro catálogo!</h1>    
+            <form class="searcher"  id="searcher" rol="search">
+                <label for="search" hidden>Busca algo más especifico en la galería...</label>
+                <input type="search" id="input_search" class="search" name="keyword" placeholder="Busca algo más especifico...">
+                
+                <label for="search_for" title="Iniciar búsqueda"><i class="fas fa-search"></i></label>
+                
+                <input type="submit" id="search_for" name="search_for" aria-hidden="true" hidden>
+            </form>
+                
+        </section>
 
         <!-- KEYWORDS -->
         <section class="keywords">
-            <div class="cont_filter">
-                <button class="btn btn_filter">Rojas</button>
-                <button class="btn btn_filter">Azules</button>
-                <button class="btn btn_filter">Celestes</button>
-                <button class="btn btn_filter">Moradas</button>
-                <button class="btn btn_filter">Verdes</button>
-                <button class="btn btn_filter">Naranaja</button>
-                <button class="btn btn_filter">Amarillas</button>
-                <button class="btn btn_filter">Cafés</button>
-                <button class="btn btn_filter">Negras</button>
-                <button class="btn btn_filter">Blancas</button>
-                <button class="btn btn_filter">Claras</button>
-                <button class="btn btn_filter">Piedras Mixtas</button>
-                <button class="btn btn_filter">Multicolor</button>
-            </div>
+            <form id="color_form" class="cont_filter">
+                <button class="btn btn_filter btn_margin"></button>
+
+                <button class="btn btn_filter" value="reset" name="color" type="submit">Mostrar todas</button>
+                <button class="btn btn_filter" value="roja" name="color" type="submit">Rojas</button>
+                <button class="btn btn_filter" value="azul" name="color" type="submit">Azules</button>
+                <button class="btn btn_filter" value="celeste" name="color" type="submit">Celestes</button>
+                <button class="btn btn_filter" value="morada" name="color" type="submit">Moradas</button>
+                <button class="btn btn_filter" value="verde" name="color" type="submit">Verdes</button>
+                <button class="btn btn_filter" value="naranja" name="color" type="submit">Naranaja</button>
+                <button class="btn btn_filter" value="amarilla" name="color" type="submit">Amarillas</button>
+                <button class="btn btn_filter" value="cafe" name="color" type="submit">Cafés</button>
+                <button class="btn btn_filter" value="negra" name="color" type="submit">Negras</button>
+                <button class="btn btn_filter" value="blanca" name="color" type="submit">Blancas</button>
+                <button class="btn btn_filter" value="clara" name="color" type="submit">Claras</button>
+                <button class="btn btn_filter" value="mixta" name="color" type="submit">Piedras Mixtas</button>
+                <button class="btn btn_filter" value="multicolor" name="color" type="submit">Multicolor</button>
+                <button class="btn btn_filter" value="reset" name="color" type="submit">Mostrar todas</button>
+
+                <button class="btn btn_filter btn_margin"></button>
+            </form>
             
 
             <button class="btn btn_slider left" title="Retroceder"><i class="fas fa-arrow-left"></i></button>
@@ -152,89 +163,29 @@
         <!-- GALERY -->
         <section class="galery_container">
             <div class="galery">
+                <a id="anchor" aria-hidden="true" hidden></a>   
                 <div class="galery_photos">
                     
-                    <!-- RECORDAR OCULTAR CON CSS LOS PRECIOS Y EL STOCK -->
-                    <div class="photos" title="Click para más información">
-                        <img src="../assets/img/galery/pulsera1.jpeg" alt="">
-                        <p class="info">Pulsera 1</p>
-                        <p class="price" aria-hidden="true" hidden>4500,00</p>
-                        <p class="stock" aria-hidden="true" hidden>5</p>
-                        <p class="id_product" aria-hidden="true" hidden>1</p>
 
-                    </div>
+                    <?php
+                        include "../../controller/search_for.php";
+                        foreach ($result as $value) 
+                        {
+                    ?>
+                        <div class="photos" title="Click para más información">
+                            <img src="../assets/img/gallery/<?php echo $value['url']; ?>" alt="<?php echo $value["name"]; ?>">
+                            <p class="info"><?php echo $value["name"]; ?></p>
+                            <p class="price" aria-hidden="true" hidden> <?php echo $value["cost"]; ?></p>
+                            <p class="stock" aria-hidden="true" hidden><?php echo $value["stock"]; ?></p>
+                            <p class="id_product" aria-hidden="true" hidden><?php echo $value["id_product"]; ?></p>
+                        </div>
 
-                    <div class="photos" title="Click para más información">
-                        <img src="../assets/img/galery/pulsera2.jpeg" alt="">
-                        <p class="info">Pulsera 2</p>
-                        <p class="price" aria-hidden="true" hidden>5000,00</p>
-                        <p class="stock" aria-hidden="true" hidden>2</p>
-                        <p class="id_product" aria-hidden="true" hidden>2</p>
-                    </div>
+                    <?php
+                        };
+                    ?>
 
-                    <div class="photos" title="Click para más información">
-                        <img src="../assets/img/galery/pulsera3.jpeg" alt="">
-                        <p class="info">Pulsera 3</p>
-                        <p class="price" aria-hidden="true" hidden>3500,00</p>
-                        <p class="stock" aria-hidden="true" hidden>5</p>
-                        <p class="id_product" aria-hidden="true" hidden>3</p>
-                    </div>
-
-                    <div class="photos" title="Click para más información">
-                        <img src="../assets/img/galery/pulsera4.jpg" alt="">
-                        <p class="info">Pulsera 4</p>
-                        <p class="price" aria-hidden="true" hidden>8500,00</p>
-                        <p class="stock" aria-hidden="true" hidden>25</p>
-                        <p class="id_product" aria-hidden="true" hidden>4</p>
-                    </div>
-
-                    <div class="photos" title="Click para más información">
-                        <img src="../assets/img/galery/pulsera6.jpeg" alt="">
-                        <p class="info">Pulsera 6</p>
-                    </div>
-
-                    <div class="photos" title="Click para más información">
-                        <img src="../assets/img/galery/pulsera7.jpeg" alt="">
-                        <p class="info">Pulsera 7</p>
-                    </div>
-
-                    <div class="photos" title="Click para más información">
-                        <img src="../assets/img/galery/pulsera8.jpeg" alt="">
-                        <p class="info">Pulsera 8</p>
-
-                    </div>
-
-                    <div class="photos" title="Click para más información">
-                        <img src="../assets/img/galery/pulsera8.jpeg" alt="">
-                        <p class="info">Pulsera 9</p>
-                    </div>
-
-                    <div class="photos" title="Click para más información">
-                        <img src="../assets/img/galery/pulsera8.jpeg" alt="">
-                        <p class="info">Pulsera 10</p>
-                    </div>
-
-                    <div class="photos" title="Click para más información">
-                        <img src="../assets/img/galery/pulsera8.jpeg" alt="">
-                        <p class="info">Pulsera 11</p>
-                    </div>
-
-                    <div class="photos" title="Click para más información">
-                        <img src="../assets/img/galery/pulsera8.jpeg" alt="">
-                        <p class="info">Pulsera 12</p>
-                    </div>
-
-                    <div class="photos" title="Click para más información">
-                        <img src="../assets/img/galery/pulsera8.jpeg" alt="">
-                        <p class="info">Pulsera 13</p>
-                    </div>
-
-                    <div class="photos" title="Click para más información">
-                        <img src="../assets/img/galery/pulsera8.jpeg" alt="">
-                        <p class="info">Pulsera 14</p>
-                    </div>
                 </div>
-                <strong>Has llegado hasta el final...</strong>
+                <strong class="info_alert"><?php echo $cont; ?></strong>
             </div>
         </section>
 
@@ -280,6 +231,7 @@
                 </section>
             </header>
 
+            <p class="all_rights_reserved">2020 © Komodo. Todos los derechos reservados</p>
         
         </footer>
 
@@ -304,7 +256,26 @@
         left.addEventListener("click", moveLeft);
         right.addEventListener("click", moveRight);
 
+        // TITULO DEL BUSCADOR
+        
 
+        window.addEventListener("scroll",function(e){
+            let title = document.querySelector(".banner h1");
+            let keywords = document.querySelector(".keywords");
+            keywords_position = keywords.getBoundingClientRect().top;
+            screen_size = window.innerHeight;
+
+            if (keywords_position < screen_size / 3.5) {
+
+                title.style.display = "none";
+                
+            }else{
+
+                title.style.display = "block";
+
+            }
+
+        })
         // BOTONES DE ABRIR/CERRAR CARRITO
 
         let cart_close = document.querySelector(".close_cart");
@@ -340,6 +311,7 @@
     </script>
     <script type="module" src="../js/shopping_cart.js"></script>
     <script type="module" src="../js/gallery_controller.js"></script>
+    <script type="module" src="../js/search_for.js"></script>
 
 </body>
 </html>

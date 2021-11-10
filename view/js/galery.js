@@ -37,13 +37,10 @@ let download_btn = document.querySelector(".download_img");
                 }
 
                 download_btn.addEventListener("click", pushButton)
-            } catch (error) {
-                
+            } catch (err) {
+                console.log(err); 
             }
-            
-            
         }else{  
-
         }      
     }
     
@@ -76,10 +73,7 @@ let download_btn = document.querySelector(".download_img");
                 modal_cont.classList.add("modal_cont");
                 document.querySelector("body").style.overflow = "visible";
             }
-
-
         })
-
     })
 
     close.addEventListener("click", e =>{

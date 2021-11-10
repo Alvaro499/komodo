@@ -51,10 +51,10 @@
                     <button class="btn btn_menu"><i class="fas fa-bars"></i>Menú</button>
     
                     <ul class="menu">
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="gallery.html">Catálogo</a></li>
-                        <li><a href="order.html">Pedidos</a></li>
-                        <li><a href="contact.html">Contacto</a></li>
+                        <li><a href="index.php">Inicio</a></li>
+                        <li><a href="gallery.php">Catálogo</a></li>
+                        <li><a href="order.php">Pedidos</a></li>
+                        <li><a href="contact.php">Contacto</a></li>
                     </ul>
                 </nav>
 
@@ -141,7 +141,6 @@
             </article>
             <article class="order_form">
 
-                <!-- action="<?php echo htmlspecialchars)$_SERVER['PHP_SELF']);?>" -->
                 <form id="form">
                     <h3>Formulario de pedido</h3>
 
@@ -242,7 +241,7 @@
                 </section>
             </header>
 
-        
+            <p class="all_rights_reserved">2020 © Komodo. Todos los derechos reservados</p>
         </footer>
     </div>
 
