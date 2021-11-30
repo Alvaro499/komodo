@@ -3,6 +3,8 @@
     let select_district = document.getElementById("district");
     let select_canton = document.getElementById("canton");
     let select_province = document.getElementById("province");
+
+    //Texto por defecto antes de la informacion del cliente
     canton.innerHTML = '<option value="">Selecciona tu cantón:</option>';
     select_district.innerHTML = '<option value="">Selecciona tu cantón:</option>';
 

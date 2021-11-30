@@ -8,7 +8,6 @@ let image_file = document.getElementById("image");
 let comment = document.getElementById("comment");
 let inputs_error = document.querySelectorAll(".input_error");
 
-// 
 var regex_name = new RegExp('^[a-zA-ZÀ-ÿ]+$', 'i', 'g');
 var regex_cel = new RegExp('^[0-9]+$');
 const regex_correo = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
@@ -22,7 +21,6 @@ export function sendConsult(){
     let cont_error = 0;
 
     if (user_name.value == "" || user_name.value == null || !regex_name.test(user_name.value)) {
-        // debugger;
         user_name.style.border = "3px solid #E40017";
         user_name.nextElementSibling.style.display = "block";
         cont_error++;
@@ -33,7 +31,6 @@ export function sendConsult(){
     }
 
     if (last_name.value == "" || last_name.value == null || !regex_name.test(user_name.value)) {
-        // debugger;
         last_name.style.border = "3px solid #E40017";
         last_name.nextElementSibling.style.display = "block";
         cont_error++;
@@ -44,7 +41,6 @@ export function sendConsult(){
     }
 
     if (cel.value == "" || cel.value == null || !regex_cel.test(cel.value)) {
-        // debugger;
         cel.style.border = "3px solid #E40017";
         cel.nextElementSibling.style.display = "block";
         cont_error++;
@@ -55,7 +51,6 @@ export function sendConsult(){
     }
 
     if (email.value == "" || email.value == null || !regex_correo.test(email.value)) {
-        // debugger;
         email.style.border = "3px solid #E40017";
         email.nextElementSibling.style.display = "block";
         cont_error++;
@@ -66,7 +61,6 @@ export function sendConsult(){
     }
 
     if (comment.value == "" || comment.value == null) {
-        // debugger;
         comment.style.border = "3px solid #E40017";
         comment.nextElementSibling.style.display = "block";
         cont_error++;

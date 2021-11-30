@@ -22,16 +22,11 @@
 // echo"<br>";
 
 // echo dirname(__FILE__);
-//Devuelve la ruta completa del script actual
+//Devuelve la ruta completa del script actual, pero se recomienda no utilizarlo ya que esta obsoleto
 //C:\xampp\htdocs\komodo_page\controller
 
 // echo"<br>";
 
 //En PHP se recomienda usar mas __DIR__ ya que devuelve la ruta real (actualizada sin importar el dominion) con enlaces simbólicos resueltos.
-
-
-
 include __DIR__ . "../../require.php";
-
 $array_products = $products_controller->getProduct();
-// var_dump($array_products);

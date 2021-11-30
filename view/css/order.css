@@ -183,7 +183,7 @@
 
 /* SECTION INFO */
 .instructions{
-    margin: 25px 100px 25px 100px;
+    margin: 25px 50px 25px 50px;
     width: auto;
     height: auto;
 }
@@ -244,7 +244,7 @@
 }
 
 .info_cards{
-    width: 75%;
+    width: 100%;
     height: auto;
     background: #ffffff;
     text-align: center;
@@ -281,11 +281,21 @@
 }
 
     /* SECTION INFO - Media queries */
+    @media (min-width: 550px){
+        .instructions{
+            margin: 25px 100px 25px 100px;
+        }
+    }
+
     @media (min-width: 768px){
 
         
         .more_info{
             padding: 1rem 3rem;
+        }
+
+        .info_cards{
+            width: 65%;
         }
     }
 
@@ -363,12 +373,14 @@
         object-fit: contain;
     }
 
-    .cart_select p{
-        margin-top: 15px;
+    .cart_select {
+        margin-top: 25px;
+        text-align: center;
     }
 
-    .cart_select p{
-        text-align: center;
+    .cart_select a:hover{
+        
+        border-bottom: 1px solid;
     }
 
     .cart_options_cont{

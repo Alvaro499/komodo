@@ -15,14 +15,12 @@ form.addEventListener("submit", e => {
 
         fetch("../../controller/contact_email.php", {method: "POST", body: data })
         .then(function(res){
-            console.log(res);
             if (res.ok) {
                 alerts.success("Éxito al enviar correo","El correo ha sido enviado éxitosamente, pronto nos comunicaremos con usted", 5000);    
             }else{
                 alerts.error("Error al enviar correo","Ha ocurrido un error al enviar el correo, por favor inténtelo más tarde", 5000);    
             }
             
-            // return res;
         }).catch(function(er){
             alerts.error("Error al enviar correo","Ha ocurrido un error al enviar el correo, por favor inténtelo más tarde", 5000);
             console.log(er);

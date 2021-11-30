@@ -31,9 +31,9 @@
                 </div>
                 <div class="modal_info">
                     <ul>
-                        <li class="bracelet_name"><strong>Nombre:</strong><span></span></li>
-                        <li class="bracelet_price"><strong>Precio:</strong><span></span></li>
-                        <li class="bracelet_stock"><strong>Disponibles:</strong><span></span></li>
+                        <li class="bracelet_name"><strong>Nombre: </strong><span></span></li>
+                        <li class="bracelet_price"><strong>Precio:  ₡</strong><span></span></li>
+                        <li class="bracelet_stock"><strong>Disponibles: </strong><span></span></li>
                         <li class="bracelet_id" aria-hidden="true" hidden></li>
                     </ul>
                     <div class="btn_modal">
@@ -96,14 +96,14 @@
             <section class="menu_logo">
 
                 <div class="box_logo">
-                    <img src="../assets/logo/logo.svg" alt="Logo de la pagina" class="logo">
+                    <img src="../assets/logo/logo.png" alt="Logo de la pagina" class="logo">
                 </div>
     
                 <nav class="top_nav">
                     <button class="btn btn_menu"><i class="fas fa-bars"></i>Menú</button>
     
                     <ul class="menu">
-                        <li><a href="index.php">Inicio</a></li>
+                        <li><a href="../../index.php">Inicio</a></li>
                         <li><a href="gallery.php">Catálogo</a></li>
                         <li><a href="order.php">Pedidos</a></li>
                         <li><a href="contact.php">Contacto</a></li>
@@ -136,18 +136,16 @@
                 <button class="btn btn_filter btn_margin"></button>
 
                 <button class="btn btn_filter" value="reset" name="color" type="submit">Mostrar todas</button>
-                <button class="btn btn_filter" value="roja" name="color" type="submit">Rojas</button>
+                <button class="btn btn_filter" value="rojo" name="color" type="submit">Rojas</button>
                 <button class="btn btn_filter" value="azul" name="color" type="submit">Azules</button>
                 <button class="btn btn_filter" value="celeste" name="color" type="submit">Celestes</button>
-                <button class="btn btn_filter" value="morada" name="color" type="submit">Moradas</button>
+                <button class="btn btn_filter" value="morado" name="color" type="submit">Moradas</button>
                 <button class="btn btn_filter" value="verde" name="color" type="submit">Verdes</button>
                 <button class="btn btn_filter" value="naranja" name="color" type="submit">Naranaja</button>
-                <button class="btn btn_filter" value="amarilla" name="color" type="submit">Amarillas</button>
+                <button class="btn btn_filter" value="amarillo" name="color" type="submit">Amarillas</button>
                 <button class="btn btn_filter" value="cafe" name="color" type="submit">Cafés</button>
-                <button class="btn btn_filter" value="negra" name="color" type="submit">Negras</button>
-                <button class="btn btn_filter" value="blanca" name="color" type="submit">Blancas</button>
-                <button class="btn btn_filter" value="clara" name="color" type="submit">Claras</button>
-                <button class="btn btn_filter" value="mixta" name="color" type="submit">Piedras Mixtas</button>
+                <button class="btn btn_filter" value="negro" name="color" type="submit">Negras</button>
+                <button class="btn btn_filter" value="blanco" name="color" type="submit">Blancas</button>
                 <button class="btn btn_filter" value="multicolor" name="color" type="submit">Multicolor</button>
                 <button class="btn btn_filter" value="reset" name="color" type="submit">Mostrar todas</button>
 
@@ -175,7 +173,7 @@
                         <div class="photos" title="Click para más información">
                             <img src="../assets/img/gallery/<?php echo $value['url']; ?>" alt="<?php echo $value["name"]; ?>">
                             <p class="info"><?php echo $value["name"]; ?></p>
-                            <p class="price" aria-hidden="true" hidden> <?php echo $value["cost"]; ?></p>
+                            <p class="price" aria-hidden="true" hidden><?php echo $value["cost"]; ?></p>
                             <p class="stock" aria-hidden="true" hidden><?php echo $value["stock"]; ?></p>
                             <p class="id_product" aria-hidden="true" hidden><?php echo $value["id_product"]; ?></p>
                         </div>

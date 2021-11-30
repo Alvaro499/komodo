@@ -50,7 +50,6 @@ class Shopping_Cart_view{
             price : parseInt(price),
             id : parseInt(id)
         }
-        console.log(typeof products.price);
         this.readProduct(products);
         this.setProductLocalStorage(products);
     }
@@ -61,7 +60,7 @@ class Shopping_Cart_view{
                 <img src="${object_products.img}" alt="${object_products.product_name}">
                 <div class="product_info">
                     <p>${object_products.product_name}</p>
-                    <p>${object_products.price}</p>
+                    <p style="margin-top: 10px">₡ ${object_products.price}</p>
                 </div>
                 <p class="id" hidden aria-hidden="true">${object_products.id}</p>
                 <button class="btn delete_product"><i class="fas fa-trash-alt"></i></button>
@@ -233,14 +232,14 @@ class Shopping_Cart_view{
             cart_select_cont.innerHTML =
             `<div class="cart_select">
                 <img src="${cart_options_cont[0].src}" alt="Producto seleccionado: ${cart_options_cont[1].textContent}">
-                <p><strong>Nombre: <span>${cart_options_cont[1].textContent}</span></strong></p>
-                <p><strong>Precio: <span>${cart_options_cont[2].textContent}</strong></p>
+                <p style="margin: 10px 0;"><strong>Nombre: <span>${cart_options_cont[1].textContent}</span></strong></p>
+                <p><strong>Precio: ₡<span>${cart_options_cont[2].textContent}</strong></p>
                 <p hidden aria-hidden="true"><span>${cart_options_cont[3].textContent}</span></p>
             </div>`;
         }else{
             cart_select_cont.innerHTML =
             `<div class="cart_select">
-                <strong>Aún no has agregado nada en tu carrito. Recuerda visitar nuestra galería de productos</strong>
+                <strong>Aún no has agregado nada en tu carrito. <br> Recuerda visitar nuestra <a href="gallery.php">galería de productos</a></strong>
             </div>`;
         }
     }
@@ -265,7 +264,6 @@ class Shopping_Cart_view{
             product_cont = "";
             key_attr = index;
             product_cont = e.currentTarget.parentNode;
-            console.log(key_attr);
         }
 
         btn_delete.addEventListener("click",deleteProductKey);
@@ -304,19 +302,15 @@ class Shopping_Cart_view{
                 <p class="products_id">${products[i].id}</p>
             </div>`;    
         }
-        console.log(input_products.children);
         return input_products.children;
-        
     }
 
     verifyMyProducts(){
         let my_products = this.createInputProducts();
         if (my_products.length != 0) {
-            console.log('Existen produtos');
             return 1;
             //Si existen productos en el carrito
         }else{
-            console.log('Existen produtos');
             return 0;
             //No hay productos
         }

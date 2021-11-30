@@ -23,7 +23,4 @@ if ( isset($_GET["color"]) ) {
 }
 
 $cont = count($result);
-$cont = $cont == 0 ? $cont = "Lo sentimos, por el momento no disponemos de pulseras con estas características o similares." : $cont = "Has llegado hasta el final, pero pronto tendremos nuevos modelos...";
-// https://stackoverflow.com/questions/35969974/foreach-is-not-a-function-error-with-javascript-array
-//https://stackoverflow.com/questions/23740548/how-do-i-pass-variables-and-data-from-php-to-javascript
-//https://stackoverflow.com/questions/12783737/how-to-use-setinterval-in-php
+$cont = $cont == 0 ? $cont = "Lo sentimos, por el momento no disponemos de pulseras con estas características o similares. <br>Puedes intentar buscando con otras palabras." : $cont = "Has llegado hasta el final, pero pronto tendremos nuevos modelos...";

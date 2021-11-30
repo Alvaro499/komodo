@@ -125,12 +125,6 @@ export function sendOrder(){
         direction.style.border = "3px solid #54E346";
     }
 
-    // let date = new Date();
-    // order_date.value = date.toLocaleString();
-    // order_hour.value = date.toLocaleTimeString()
-    // console.log(order_date);
-    // console.log(order_hour);
-
     if (cont_error == 0) {
 
         return true;

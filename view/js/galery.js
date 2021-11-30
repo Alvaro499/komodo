@@ -22,7 +22,7 @@ let download_btn = document.querySelector(".download_img");
 
                 let pushButton = function(){
 
-                    //Soporte pata IE y EDGE (es un metodo obsoleto)
+                    //Soporte pata IE y EDGE (metodo obsoleto)
                     if(window.navigator.msSaveBlob){
                         window.navigator.msSaveBlob(canvas.msToBlob(), "pulsera_img.png")
                         canvas.remove();
@@ -52,10 +52,10 @@ let download_btn = document.querySelector(".download_img");
             let img_modal = document.querySelector(".img_modal");
             img_modal.src = url_img;
 
-            name_img.textContent = photos[index].children[1].textContent;
-            price.textContent = photos[index].children[2].textContent;
-            stock.textContent= photos[index].children[3].textContent;
-            id.textContent= photos[index].children[4].textContent;
+            name_img.textContent = photos[index].children[1].textContent; //nombre product
+            price.textContent = photos[index].children[2].textContent; //precio product
+            stock.textContent= photos[index].children[3].textContent; //stock del producto
+            id.textContent= photos[index].children[4].textContent; //id del producto
             let name_img_text = photos[index].children[1].textContent;
 
             

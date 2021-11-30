@@ -39,14 +39,14 @@
             <section class="menu_logo">
 
                 <div class="box_logo">
-                    <img src="../assets/logo/logo.svg" alt="Logo de la pagina" class="logo">
+                    <img src="../assets/logo/logo.png" alt="Logo de la pagina" class="logo">
                 </div>
     
                 <nav class="top_nav">
                     <button class="btn btn_menu"><i class="fas fa-bars"></i>Menú</button>
     
                     <ul class="menu">
-                        <li><a href="index.php">Inicio</a></li>
+                        <li><a href="../../index.php">Inicio</a></li>
                         <li><a href="gallery.php">Catálogo</a></li>
                         <li><a href="order.php">Pedidos</a></li>
                         <li><a href="contact.php">Contacto</a></li>

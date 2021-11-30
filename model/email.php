@@ -6,6 +6,8 @@
     use PHPMailer \ PHPMailer \ PHPMailer;
     use PHPMailer \ PHPMailer \ SMTP;
     use PHPMailer \ PHPMailer \ Exception;
+
+    require __DIR__ . "/constants.php";
     
     class ContactEmail_model{
 
@@ -24,20 +26,17 @@
 
                 $this->email->SMTPAuth = true;
 
-                // $this->email->Username = "aldasi2000@hotmail.com";
-                // $this->email->Password = "cdx#2460SQ";
-
-                $this->email->Username = "komodocr21@gmail.com";
-                $this->email->Password = "Komodo24sq_";
+                $this->email->Username = EMAIL;
+                $this->email->Password = EMAIL_PASSWORD;
 
 
                 $this->email->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 
                 $this->email->Port = 587;
 
-                $this->email->setFrom("komodocr21@gmail.com", $name . " " . $last_name);
+                $this->email->setFrom(EMAIL, $name . " " . $last_name);
 
-                $this->email->addAddress("komodocr21@gmail.com");
+                $this->email->addAddress(EMAIL);
 
                 $this->email->AddEmbeddedImage("../view/assets/logo/logo.png", "logo", "../view/assets/logo/logo.png");
                 
@@ -150,18 +149,15 @@
 
                 $this->email->SMTPAuth = true;
 
-                // $this->email->Username = "aldasi2000@hotmail.com";
-
-                // $this->email->Password = "cdx#2460SQ";
-                $this->email->Username = "komodocr21@gmail.com";
-                $this->email->Password = "Komodo24sq_";
+                $this->email->Username = EMAIL;
+                $this->email->Password = EMAIL_PASSWORD;
 
                 $this->email->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 
                 //RECORDAR CAMBIAR EL PUERTO CUANDO SE SUBA A UN SERVIDOR
                 $this->email->Port = 587;
 
-                $this->email->setFrom("komodocr21@gmail.com", "KOMODO");
+                $this->email->setFrom(EMAIL, "KOMODO");
 
                 $this->email->addAddress($email);
 
@@ -181,8 +177,7 @@
                     $total_price += $all_products[$i]->price;
                 };
 
-                //https://content-myemma-com.translate.goog/blog/css-in-html-emails-what-you-need-to-know-to-get-started?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=nui%2Csc
-                
+                // $subject = str_replace('&euro;', mb_encode_mimeheader('€', 'UTF-8'), $subject);
 
                 $this->email->Body = utf8_decode('
                 <body style="width: 100%;height: auto; padding: 0;margin: 0;">
@@ -197,7 +192,7 @@
 
                             <button
                             style="width: 50%; background: #E84A26; color: #ffffff;font-size: 1.2rem; padding: 0.8em 0.8em; outline: none;border: none;cursor: pointer;"
-                            ><i class="fas fa-door-open" style="margin-right: 5px;"></i><a href="http://localhost/komodo_page/view/ui/" style="text-decoration: none;color: #ffffff;">Ir a la página</a></button>
+                            ><i class="fas fa-door-open" style="margin-right: 5px;"></i><a href="http://komodo-test21.42web.io/" style="text-decoration: none;color: #ffffff;">Ir a la página</a></button>
 
                         </div>
         
@@ -211,7 +206,7 @@
                             <p>Le agradacemos por su solicitud de compra en Komodo.com</p>
                             <p>A continuación encontrará el historial de su carrito de compras con todos los pedidos realizados. Recuerde guardar este correo en el caso de que sea necesario, como por ejemplo cancelar su solicitud de pedido.</p>
                             <br>
-                            <strong>*NOTA IMPORTANTE: Recuerde que aún no se realizado la compra, nuestro personal debe ponerse en contacto para realizar el pago de sus productos</strong>
+                            <strong>*NOTA IMPORTANTE: Recuerde que aún no se realizado la compra, nuestro personal debe ponerse en contacto con usted para realizar el pago de sus productos</strong>
                         </div>
     
                     </section>
@@ -258,13 +253,6 @@
                                     <td style="padding: 2% 0;">Zona de residencia:</td>
                                     <td style="padding: 2% 0;">Provincia: ' . $province . ' - Canton: ' . $canton . ' - Distrito: ' . $district . '</td>
                                 </tr>
-
-                                <td colspan="2"><hr></td>
-                    
-                                <tr>
-                                    <td style="padding: 2% 0;">Método de pago:</td>
-                                    <td style="padding: 2% 0;">SYMPE</td>
-                                </tr>
                             </tr>
                             
                         </tbody>
@@ -288,7 +276,7 @@
 
                                     <tr>
                                         <td style="padding: 2% 0;"><strong>ID del producto: </strong>' . $all_products[$i]->id . ' <br><br><strong>Nombre producto: </strong>' . $all_products[$i]->product_name . '</td>
-                                        <td style="padding: 2% 0;">' . $all_products[$i]->price . '</td>
+                                        <td style="padding: 2% 0;">' . $all_products[$i]->price . ' colones</td>
                                     </tr>
 
                                     <tr><td colspan="2"><hr></td></tr>');
@@ -298,7 +286,7 @@
 
                             <tr>
                                 <td width="75%" style="background: #000000;color: #ffffff; font-size: 1rem; padding: 1em 0.5em;">Total del pedido:</td>
-                                <td width="25%"><strong>' . $total_price . '</strong></td>
+                                <td width="25%"><strong>' . $total_price . ' colones</strong></td>
                             </tr>
 
                         </tbody>
@@ -350,20 +338,17 @@
 
                 $this->email->SMTPAuth = true;
 
-                // $this->email->Username = "aldasi2000@hotmail.com";
-
-                // $this->email->Password = "cdx#2460SQ";
-                $this->email->Username = "komodocr21@gmail.com";
-                $this->email->Password = "Komodo24sq_";
+                $this->email->Username = EMAIL;
+                $this->email->Password = EMAIL_PASSWORD;
 
                 $this->email->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 
                 //RECORDAR CAMBIAR EL PUERTO CUANDO SE SUBA A UN SERVIDOR
                 $this->email->Port = 587;
 
-                $this->email->setFrom("aldasi2000@hotmail.com", "KOMODO: Solicitud de pedido");
+                $this->email->setFrom(EMAIL, "KOMODO: Solicitud de pedido");
 
-                $this->email->addAddress("komodocr21@gmail.com");
+                $this->email->addAddress(EMAIL);
 
                 $this->email->Charset = "UTF-8";
 
@@ -381,9 +366,6 @@
                     $total_price += $all_products[$i]->price;
                 };
 
-                //https://content-myemma-com.translate.goog/blog/css-in-html-emails-what-you-need-to-know-to-get-started?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=nui%2Csc
-                
-
                 $this->email->Body = utf8_decode('
                 <body style="width: 100%;height: 100%; padding: 0;margin: 0;">
 
@@ -397,7 +379,7 @@
 
                             <button
                             style="width: 55%; background: #E84A26; color: #ffffff;font-size: 1.2rem; padding: 1em 1em; outline: none;border: none;cursor: pointer;"
-                            ><i class="fas fa-door-open" style="margin-right: 5px;"></i><a href="http://localhost/komodo_page/view/ui/" style="text-decoration: none;color: #ffffff;">Ir a la página</a></button>
+                            ><i class="fas fa-door-open" style="margin-right: 5px;"></i><a href="http://komodo-test21.42web.io/" style="text-decoration: none;color: #ffffff;">Ir a la página</a></button>
 
                         </div>
         
@@ -466,14 +448,6 @@
                                 </tr>
 
                                 <td colspan="2"><hr></td>
-
-                                <tr>
-                                    <td style="padding: 2% 0;">Método de pago:</td>
-                                    <td style="padding: 2% 0;">SYMPE</td>
-                                </tr>
-
-                                <td colspan="2"><hr></td
-                    
                             </tr>
                             
                         </tbody>
@@ -497,7 +471,7 @@
 
                                     <tr>
                                         <td style="padding: 2% 0;"><strong>ID del producto: </strong>' . $all_products[$i]->id . ' <br><br><strong>Nombre producto: </strong>' . $all_products[$i]->product_name . '</td>
-                                        <td style="padding: 2% 0;">' . $all_products[$i]->price . '</td>
+                                        <td style="padding: 2% 0;">' . $all_products[$i]->price . ' colones</td>
                                     </tr>
 
                                     <tr><td colspan="2"><hr></td></tr>');
@@ -507,7 +481,7 @@
 
                             <tr>
                                 <td width="75%" style="background: #000000;color: #ffffff; font-size: 1rem; padding: 1em 0.5em;">Total del pedido:</td>
-                                <td width="25%"><strong>' . $total_price . '</strong></td>
+                                <td width="25%"><strong>' . $total_price . ' colones</strong></td>
                             </tr>
 
                         </tbody>
